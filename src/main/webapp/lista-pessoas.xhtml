@@ -35,9 +35,15 @@
 
         </nav>
 
-        <h1 id="titulo-cadastro"> Gerencia Pessoas </h1>
+        <p:dataTable id="pessoas" var="pessoa" value="#{pessoaBean.listarPessoas()}" style="margin-top: 10px;">
 
-        <p:dataTable var="pessoa" value="#{pessoaBean.listarPessoas()}">
+            <f:facet name="header">
+                Gerencia Pessoas
+                <p:commandButton id="toggler" value="Colunas" style="font-size:12px; float:right;" icon="ui-icon-calculator" />
+                <p:columnToggler datasource="pessoas" trigger="toggler" />
+
+            </f:facet>
+
             <p:column headerText="Nome">
                 <h:outputText value="#{pessoa.nome}" />
             </p:column>

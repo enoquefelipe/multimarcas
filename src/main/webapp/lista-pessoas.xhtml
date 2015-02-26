@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title> Lista Pessoas </title>
+        <link rel="StyleSheet" type="text/css" href="css/style.css" media="screen" />
+    </h:head>
+    <h:body>
+        <nav>
+            <h:form>  
+                <p:growl id="messages"/>
+
+                <p:menubar>
+                    <p:menuitem value="Home" action="index" icon="ui-icon-arrowreturnthick-1-w" />
+
+                    <p:submenu label="Cadastrar" >
+                        <p:menuitem value="Pessoa" outcome="#{pessoaBean.preparaAddPessoa()}" />
+                        <p:separator />
+                        <p:menuitem value="Veículo" />
+                    </p:submenu>
+
+                    <p:submenu label="Lista" >
+                        <p:menuitem value="Pessoa" outcome="listaPessoas" />
+                    </p:submenu>
+
+                    <f:facet name="options">
+
+                        <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />
+                    </f:facet>
+                </p:menubar>
+            </h:form>
+
+        </nav>
+
+        <h1 id="titulo-cadastro"> Gerencia Pessoas </h1>
+
+        <p:dataTable var="pessoa" value="#{pessoaBean.listarPessoas()}">
+            <p:column headerText="Nome">
+                <h:outputText value="#{pessoa.nome}" />
+            </p:column>
+
+            <p:column headerText="RG">
+                <h:outputText value="#{pessoa.rg}"/>
+            </p:column>
+
+            <p:column headerText="CPF">
+                <h:outputText value="#{pessoa.cpf}"/>
+            </p:column>
+
+            <p:column headerText="Sexo">
+                <h:outputText value="#{pessoa.sexo}"/>
+            </p:column>
+
+        </p:dataTable>
+
+
+    </h:body>
+</html>
+

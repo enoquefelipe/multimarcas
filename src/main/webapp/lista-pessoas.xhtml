@@ -39,9 +39,6 @@
 
             <f:facet name="header">
                 Gerencia Pessoas
-                <p:commandButton id="toggler" value="Colunas" style="font-size:12px; float:right;" icon="ui-icon-calculator" />
-                <p:columnToggler datasource="pessoas" trigger="toggler" />
-
             </f:facet>
 
             <p:column headerText="Nome">
@@ -60,11 +57,11 @@
                 <h:outputText value="#{pessoa.sexo}"/>
             </p:column>
 
-            <p:column headerText="Excluir">
+            <p:column headerText="Excluir" style="text-align: center;">
                 <h:form>           
                     <p:growl id="message" showDetail="true" />
 
-                    <p:commandButton value="Exluir" update="message" action="#{pessoaBean.excluirPessoa()}">
+                    <p:commandButton value="Exluir" update="message" action="#{pessoaBean.excluirPessoa()}" >
                         <p:confirm header="Atenção" message="Deseja realmente Excluir?" icon="ui-icon-alert" />
                     </p:commandButton>
 

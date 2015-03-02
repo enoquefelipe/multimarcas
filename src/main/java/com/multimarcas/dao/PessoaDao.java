@@ -28,4 +28,18 @@ public class PessoaDao {
         return lista;
     }
 
+    public void remove(Pessoa pessoa) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        session.delete(pessoa);
+        t.commit();
+    }
+
+    public void update(Pessoa pessoa) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        session.update(pessoa);
+        t.commit();
+    }
+
 }

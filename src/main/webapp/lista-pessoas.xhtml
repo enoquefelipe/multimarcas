@@ -60,6 +60,21 @@
                 <h:outputText value="#{pessoa.sexo}"/>
             </p:column>
 
+            <p:column headerText="Excluir">
+                <h:form>           
+                    <p:growl id="message" showDetail="true" />
+
+                    <p:commandButton value="Exluir" update="message" action="#{pessoaBean.excluirPessoa()}">
+                        <p:confirm header="Atenção" message="Deseja realmente Excluir?" icon="ui-icon-alert" />
+                    </p:commandButton>
+
+                    <p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
+                        <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+                        <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                    </p:confirmDialog>
+                </h:form>
+            </p:column>
+
         </p:dataTable>
 
 

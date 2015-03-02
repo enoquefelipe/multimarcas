@@ -32,6 +32,19 @@ public class PessoaBean {
         return listaPessoas;
     }
 
+    public String excluirPessoa() {
+        Pessoa pessoaTemp = (Pessoa) (listaPessoas.getRowData());
+        PessoaDao dao = new PessoaDao();
+        dao.remove(pessoaTemp);
+        return "index";
+    }
+
+    public String alterarPessoa() {
+        PessoaDao dao = new PessoaDao();
+        dao.update(pessoa);
+        return "index";
+    }
+
     public Pessoa getPessoa() {
         return pessoa;
     }

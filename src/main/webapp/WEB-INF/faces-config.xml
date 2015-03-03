@@ -16,12 +16,11 @@
             <from-outcome>updatePessoa</from-outcome> 
             <to-view-id>altera-pessoa.xhtml</to-view-id> 
         </navigation-case>
-                
+      
         <navigation-case>
             <from-outcome>listaPessoas</from-outcome> 
             <to-view-id>lista-pessoas.xhtml</to-view-id> 
         </navigation-case>
-        
     </navigation-rule>
 
 </faces-config>

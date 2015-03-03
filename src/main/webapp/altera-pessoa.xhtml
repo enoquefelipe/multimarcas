@@ -36,17 +36,17 @@
                 <h:panelGrid columns="4" cellpadding="6">
                     
                     <p:outputLabel value="ID:" for="id"/>                    
-                    <h:inputText id="id" value="#{pessoaBean.pessoa.id}" />
+                    <h:inputText id="id" value="#{pessoaBean.pessoa.id}" valueChangeListener="#{pessoaBean.pessoa.id}"/>
                      <p:message for="id" />
                     <h:outputText value="#{pessoaBean.pessoa.id}" />
 
                     <p:outputLabel value="Nome:" for="nome"/>
-                    <h:inputText id="nome" value="#{pessoaBean.pessoa.nome}" required="true" label="Nome" requiredMessage="Campo nome é obrigatorio!"/>
+                    <h:inputText id="nome" value="#{pessoaBean.pessoa.nome}" valueChangeListener="#{pessoaBean.pessoa.nome}" required="true" label="Nome" requiredMessage="Campo nome é obrigatorio!"/>
                     <p:message for="nome" />
                     <h:outputText value="#{pessoaBean.pessoa.nome}" />
 
                     <p:outputLabel value="RG:" for="rg" />
-                    <p:inputText id="rg" value="#{pessoaBean.pessoa.rg}" required="true" />
+                    <p:inputText id="rg" value="#{pessoaBean.pessoa.rg}" valueChangeListener="#{pessoaBean.pessoa.rg}" required="true" />
                     <p:message for="rg" />
                     <h:outputText value="#{pessoaBean.pessoa.rg}" />
 

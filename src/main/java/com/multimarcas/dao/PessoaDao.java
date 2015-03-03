@@ -15,7 +15,7 @@ public class PessoaDao {
         t.commit();
     }
 
-    public Pessoa getLivro(long id) {
+    public Pessoa getPessoa(long id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         return (Pessoa) session.load(Pessoa.class, id);
     }
@@ -38,7 +38,8 @@ public class PessoaDao {
     public void update(Pessoa pessoa) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
-        session.update(pessoa);
+   //     session.update(pessoa);
+        session.saveOrUpdate(pessoa);
         t.commit();
     }
 

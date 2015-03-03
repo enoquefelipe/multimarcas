@@ -18,6 +18,12 @@ public class Pessoa implements Serializable {
 //    @Temporal(javax.persistence.TemporalType.DATE)
 //    private Date dataNasc;
 
+//    @Temporal(javax.persistence.TemporalType.DATE)
+//    private Date dataNasc;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -37,8 +43,9 @@ public class Pessoa implements Serializable {
 //    public void setDataNasc(Date dataNasc) {
 //        this.dataNasc = dataNasc;
 //    }
-
- 
+    public Long getId() {
+        return id;
+    }
 
     public String getNome() {
         return nome;
@@ -59,5 +66,4 @@ public class Pessoa implements Serializable {
 //    public Date getDataNasc() {
 //        return dataNasc;
 //    }
-
 }

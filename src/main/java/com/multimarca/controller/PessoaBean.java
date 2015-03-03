@@ -20,6 +20,14 @@ public class PessoaBean {
         return "addPessoa";
     }
 
+    public String prepararAlterarPessoa() {
+        pessoa = (Pessoa) (listaPessoas.getRowData());
+        System.out.print(pessoa.getNome());
+        System.out.print(pessoa.getCpf());
+        return "updatePessoa";
+//        return "addPessoa";
+    }
+
     public String addPessoa() throws Exception {
         PessoaDao pessoaDAO = new PessoaDao();
         pessoaDAO.save(pessoa);

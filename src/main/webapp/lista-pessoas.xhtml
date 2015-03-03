@@ -41,6 +41,9 @@
                 Gerencia Pessoas
             </f:facet>
 
+            <p:column headerText="ID" style="width:35px; text-align: center;">
+                <h:outputText value="#{pessoa.id}" />
+            </p:column>
             <p:column headerText="Nome">
                 <h:outputText value="#{pessoa.nome}" />
             </p:column>
@@ -57,11 +60,17 @@
                 <h:outputText value="#{pessoa.sexo}"/>
             </p:column>
 
-            <p:column headerText="Excluir" style="text-align: center;">
+            <p:column headerText="Editar" style="text-align: center; width:55px">
+                <h:form>
+                    <p:commandButton action="#{pessoaBean.prepararAlterarPessoa()}" icon="ui-icon-pencil" />
+                </h:form>  
+            </p:column>
+
+            <p:column headerText="Excluir" style="text-align: center; width:55px">
                 <h:form>           
                     <p:growl id="message" showDetail="true" />
 
-                    <p:commandButton value="Exluir" update="message" action="#{pessoaBean.excluirPessoa()}" >
+                    <p:commandButton update="message" action="#{pessoaBean.excluirPessoa()}" icon="ui-icon-close">
                         <p:confirm header="Atenção" message="Deseja realmente Excluir?" icon="ui-icon-alert" />
                     </p:commandButton>
 

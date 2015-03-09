@@ -38,8 +38,8 @@ public class PessoaDao {
     public void update(Pessoa pessoa) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
-   //     session.update(pessoa);
-        session.saveOrUpdate(pessoa);
+        session.update(pessoa);
+//      session.saveOrUpdate(pessoa);
         t.commit();
     }
 

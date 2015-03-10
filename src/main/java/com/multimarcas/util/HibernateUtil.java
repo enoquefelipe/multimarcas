@@ -1,5 +1,7 @@
 package com.multimarcas.util;
 
+import com.multimarcas.model.Concessionaria;
+import com.multimarcas.model.Marca;
 import com.multimarcas.model.Pessoa;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
@@ -17,6 +19,8 @@ public class HibernateUtil {
 
                 AnnotationConfiguration ac = new AnnotationConfiguration();
                 ac.addAnnotatedClass(Pessoa.class);
+                ac.addAnnotatedClass(Marca.class);
+                ac.addAnnotatedClass(Concessionaria.class);
                 sessionFactory = ac.configure().buildSessionFactory();
             } catch (Throwable ex) {
                 System.err.println("Initial SessionFactory creation failed." + ex);

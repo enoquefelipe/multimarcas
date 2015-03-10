@@ -14,7 +14,7 @@
             <ui:include src="menu.xhtml"/>  
         </div> 
 
-        <p:dataTable id="pessoas" var="pessoa" value="#{pessoaBean.listarPessoas()}" style="margin-top: 10px;">
+        <p:dataTable id="pessoas" var="pessoa" value="#{pessoaBean.listarPessoas()}" style="margin-top: 10px;" paginator="true" rows="10">
 
             <f:facet name="header">
                 Gerencia Pessoas

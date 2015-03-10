@@ -4,9 +4,9 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
     <navigation-rule> 
-
-        <from-view-id></from-view-id> 
-
+        
+        <from-view-id>/*</from-view-id>
+        
         <navigation-case>
             <from-outcome>addPessoa</from-outcome> 
             <to-view-id>cadastra-pessoa.xhtml</to-view-id> 
@@ -21,6 +21,12 @@
             <from-outcome>listaPessoas</from-outcome> 
             <to-view-id>lista-pessoas.xhtml</to-view-id> 
         </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>addMarca</from-outcome> 
+            <to-view-id>cadastra-marca.xhtml</to-view-id> 
+        </navigation-case>
+    
     </navigation-rule>
-
+   
 </faces-config>

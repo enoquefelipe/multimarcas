@@ -5,23 +5,34 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
-        <title>Home</title>
+        <title> Home </title>
     </h:head>
     <h:body>
 
         <div id="topo">  
             <ui:include src="menu.xhtml"/>  
-        </div> 
-
-        <div id="img-home">
-            <p>Bem vindo ao projeto Multimarcas Car!</p>
-            <img src="img/crm2.jpg"/>
         </div>
 
-        <h:form>
-            <label> Horáio atual: </label>
-            <p:clock pattern="HH:mm:ss - dd.MM.yyyy" mode="server" />
-        </h:form>
+        <div class="ui-grid ui-grid-responsive" id="grid-home">
+
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-4">
+                    <p>Bem vindo ao projeto Multimarcas Car!</p>
+                </div>
+
+                <div class="ui-grid-col-4">
+                    <h1> Horário atual </h1>
+                    <p:clock pattern="HH:mm:ss - dd.MM.yyyy" mode="server" />
+                </div>
+
+                <div class="ui-grid-col-4">
+                     <p>Bem vindo ao projeto Multimarcas Car!</p>
+                </div>
+            </div>
+
+        </div>
+
+
     </h:body>
 </html>
 

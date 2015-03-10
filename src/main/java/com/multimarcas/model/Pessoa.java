@@ -8,18 +8,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 //import javax.persistence.Temporal;
 
-@Entity
+@Entity(name = "tab_pessoa")
 public class Pessoa implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nome, rg, cpf, sexo;
-//    @Temporal(javax.persistence.TemporalType.DATE)
-//    private Date dataNasc;
 
 //    @Temporal(javax.persistence.TemporalType.DATE)
 //    private Date dataNasc;
+    
     public void setId(Long id) {
         this.id = id;
     }

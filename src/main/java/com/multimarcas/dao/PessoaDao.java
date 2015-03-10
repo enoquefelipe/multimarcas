@@ -23,7 +23,7 @@ public class PessoaDao {
     public List<Pessoa> list() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
-        List lista = session.createQuery("from Pessoa").list();
+        List lista = session.createQuery("from tab_pessoa").list();
         t.commit();
         return lista;
     }

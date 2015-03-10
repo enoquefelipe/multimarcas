@@ -37,18 +37,18 @@
                     <h:outputText value="#{pessoaBean.pessoa.cpf}" />
 
                     <p:outputLabel value="Sexo:" for="sex" />
-                    <p:selectOneMenu id="sex" value="#{pessoaBean.pessoa.sexo}" style="width:125px">
-                        <f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+                    <h:selectOneMenu id="sex" value="#{pessoaBean.pessoa.sexo}" style="width:130px">
+                        <f:selectItem itemLabel="" noSelectionOption="true" />
                         <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
                         <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
-                    </p:selectOneMenu>
+                    </h:selectOneMenu>
 
                 </h:panelGrid>
 
                 <p:commandButton value="Enviar" action="#{pessoaBean.addPessoa()}" icon="ui-icon-check" validateClient="true" ajax="false"/>
             </p:panel>
         </h:form>   
-        
+
     </h:body>
 </html>
 

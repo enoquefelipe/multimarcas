@@ -1,6 +1,7 @@
 package com.multimarcas.util;
 
 import com.multimarcas.model.Concessionaria;
+import com.multimarcas.model.Endereco;
 import com.multimarcas.model.Marca;
 import com.multimarcas.model.Pessoa;
 import org.hibernate.SessionFactory;
@@ -21,6 +22,7 @@ public class HibernateUtil {
                 ac.addAnnotatedClass(Pessoa.class);
                 ac.addAnnotatedClass(Marca.class);
                 ac.addAnnotatedClass(Concessionaria.class);
+                ac.addAnnotatedClass(Endereco.class);
                 sessionFactory = ac.configure().buildSessionFactory();
             } catch (Throwable ex) {
                 System.err.println("Initial SessionFactory creation failed." + ex);

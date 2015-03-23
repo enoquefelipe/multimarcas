@@ -11,15 +11,15 @@ public class Marca implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long id_marca;
     private String nome;
 
-    public Long getId() {
-        return id;
+    public Long getId_marca() {
+        return id_marca;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId_marca(Long id_marca) {
+        this.id_marca = id_marca;
     }
 
     public String getNome() {

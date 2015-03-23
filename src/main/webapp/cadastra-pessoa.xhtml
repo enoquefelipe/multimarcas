@@ -16,39 +16,101 @@
             <ui:include src="menu.xhtml"/>  
         </div> 
 
+        <div class="container-principal">
+            <h:form>
+                <p:panel header="Cadastro de Pessoa" id="titulo-cadastro" style="margin-top: 10px;">
+                    <h:panelGrid columns="4" cellpadding="5">
 
-        <h:form>
-            <p:panel header="Cadastro de Pessoa" id="titulo-cadastro" style="margin-top: 10px;">
-                <h:panelGrid columns="4" cellpadding="5">
+                        <p:outputLabel value="Nome" for="nome"/>
+                        <p:inputText id="nome" value="#{pessoaBean.pessoa.nome}" required="true" label="Nome" requiredMessage="Campo nome é obrigatorio!"/>
+                        <p:message for="nome" />
+                        <h:outputText value="#{pessoaBean.pessoa.nome}" />
 
-                    <p:outputLabel value="Nome:" for="nome"/>
-                    <p:inputText id="nome" value="#{pessoaBean.pessoa.nome}" required="true" label="Nome" requiredMessage="Campo nome é obrigatorio!"/>
-                    <p:message for="nome" />
-                    <h:outputText value="#{pessoaBean.pessoa.nome}" />
+                        <p:outputLabel value="RG" for="rg" />
+                        <p:inputText id="rg" value="#{pessoaBean.pessoa.rg}" required="true" />
+                        <p:message for="rg" />
+                        <h:outputText value="#{pessoaBean.pessoa.rg}" />
 
-                    <p:outputLabel value="RG:" for="rg" />
-                    <p:inputText id="rg" value="#{pessoaBean.pessoa.rg}" required="true" />
-                    <p:message for="rg" />
-                    <h:outputText value="#{pessoaBean.pessoa.rg}" />
+                        <p:outputLabel value="CPF" for="cpf" />
+                        <p:inputMask id="cpf" value="#{pessoaBean.pessoa.cpf}" required="true" mask="999.999.999-99"/>
+                        <p:message for="cpf" />
+                        <h:outputText value="#{pessoaBean.pessoa.cpf}" />          
 
-                    <p:outputLabel value="CPF:" for="cpf" />
-                    <p:inputMask id="cpf" value="#{pessoaBean.pessoa.cpf}" required="true" mask="999.999.999-99"/>
-                    <p:message for="cpf" />
-                    <h:outputText value="#{pessoaBean.pessoa.cpf}" />
+                        <p:outputLabel value="Sexo" for="sexo" />
+                        <p:selectOneMenu id="sexo" value="#{pessoaBean.pessoa.sexo}" style="width:130px">
+                            <f:selectItem itemLabel="" noSelectionOption="true" />
+                            <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+                            <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+                        </p:selectOneMenu>
+                        <p:message for="sexo" />
+                        <h:outputText value="#{pessoaBean.pessoa.sexo}" />
 
-                    <p:outputLabel value="Sexo:" for="sex" />
-                    <h:selectOneMenu id="sex" value="#{pessoaBean.pessoa.sexo}" style="width:130px">
-                        <f:selectItem itemLabel="" noSelectionOption="true" />
-                        <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
-                        <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
-                    </h:selectOneMenu>
+                        <p:outputLabel value="Data Nascimento" for="data" />
+                        <p:calendar id="data" value="#{pessoaBean.pessoa.data_nasc}" showButtonPanel="true" mask="true">
+                            <f:convertDateTime pattern="dd/MM/yyyy" />
+                        </p:calendar>
+                        <p:message for="data" />
+                        <h:outputText value="#{pessoaBean.pessoa.data_nasc}" />          
 
+                    </h:panelGrid>
+
+                    <p:commandButton value="Enviar" action="#{pessoaBean.addPessoa()}" icon="ui-icon-check" validateClient="true" ajax="false"/>
+                </p:panel>
+
+                <p:panel header="Endereço">  
+
+                    <h:panelGrid columns="2" cellpadding="5">  
+                        <p:outputLabel for="cep" value="CEP"  />   
+                        <p:inputMask id="cep" style="width:100px" mask="99999-999"/>  
+
+                        <p:outputLabel for="logradouro" value="Logradouro" />   
+                        <p:inputText id="logradouro" />  
+
+                        <p:outputLabel for="bairro" value="Bairro" />   
+                        <p:inputText id="bairro" />  
+
+                        <p:outputLabel for="uf" value="UF"  />   
+                        <p:inputMask id="uf" style="width:50px" mask="a*" />  
+
+                        <p:outputLabel for="cidade" value="Cidade" />   
+                        <p:inputText id="cidade" />  
+
+                        <p:outputLabel for="numero" value="Numero" />   
+                        <p:inputText id="numero" style="width:50px" />  
+
+                    </h:panelGrid>  
+
+                </p:panel> 
+
+            </h:form>   
+
+
+            <h:form id="frmBusca">
+                <h:panelGrid id="pnCEP" columns="3">
+                    <h:outputText value="CEP: " />
+                    <p:inputMask mask="99999-999" value="#{mbService.cep}" />
+
+                    <p:commandButton value="Pesquisar" icon="ui-icon-search" action="#{mbService.encontraCEP}" update=":frmResultado" />
                 </h:panelGrid>
+            </h:form>
 
-                <p:commandButton value="Enviar" action="#{pessoaBean.addPessoa()}" icon="ui-icon-check" validateClient="true" ajax="false"/>
-            </p:panel>
-        </h:form>   
+            <h:form id="frmResultado">
+                <h:panelGrid id="pnResultado" columns="2">
+                    <h:outputLabel value="UF"  style="font-weight:bold; padding-right: 5px; float: right;" />
+                    <p:inputText size="5" value="#{mbService.estado}" />
 
+                    <h:outputLabel value="Logradouro" style="font-weight:bold; padding-right: 5px; float: right;" />
+                    <p:inputText size="50" value="#{mbService.tipoLogradouro} #{mbService.logradouro}" />
+
+                    <h:outputLabel value="Cidade" style="font-weight:bold; padding-right: 5px; float: right;" />
+                    <p:inputText size="50" value="#{mbService.cidade}" />
+
+                    <h:outputLabel value="Bairro:" style="font-weight:bold; padding-right: 5px; float: right;" />
+                    <p:inputText size="25" value="#{mbService.bairro}" />
+                </h:panelGrid>
+            </h:form>
+
+        </div>
     </h:body>
 </html>
 

@@ -14,56 +14,57 @@
             <ui:include src="menu.xhtml"/>  
         </div> 
 
-        <p:dataTable id="pessoas" var="pessoa" value="#{pessoaBean.listarPessoas()}" style="margin-top: 10px;" paginator="true" rows="10">
+        <div class="container-principal">
+            <p:dataTable id="pessoas" var="pessoa" value="#{pessoaBean.listarPessoas()}" style="margin-top: 10px;" paginator="true" rows="10">
 
-            <f:facet name="header">
-                Gerencia Pessoas
-            </f:facet>
+                <f:facet name="header">
+                    Gerencia Pessoas
+                </f:facet>
 
-            <p:column headerText="ID" style="width:50px; text-align: center;">
-                <h:outputText value="#{pessoa.id}" />
-            </p:column>
-            <p:column headerText="Nome">
-                <h:outputText value="#{pessoa.nome}" />
-            </p:column>
+                <p:column headerText="ID" style="width:50px; text-align: center;">
+                    <h:outputText value="#{pessoa.id_pessoa}" />
+                </p:column>
+                <p:column headerText="Nome">
+                    <h:outputText value="#{pessoa.nome}" />
+                </p:column>
 
-            <p:column headerText="RG">
-                <h:outputText value="#{pessoa.rg}"/>
-            </p:column>
+                <p:column headerText="RG">
+                    <h:outputText value="#{pessoa.rg}"/>
+                </p:column>
 
-            <p:column headerText="CPF">
-                <h:outputText value="#{pessoa.cpf}"/>
-            </p:column>
+                <p:column headerText="CPF">
+                    <h:outputText value="#{pessoa.cpf}"/>
+                </p:column>
 
-            <p:column headerText="Sexo">
-                <h:outputText value="#{pessoa.sexo}"/>
-            </p:column>
+                <p:column headerText="Sexo">
+                    <h:outputText value="#{pessoa.sexo}"/>
+                </p:column>
 
-            <p:column headerText="Editar" style="text-align: center; width:55px">        
+                <p:column headerText="Editar" style="text-align: center; width:55px">        
 
-                <h:form>
-                    <p:commandButton action="#{pessoaBean.prepararAlterarPessoa()}" icon="ui-icon-pencil" />
-                </h:form>  
-            </p:column>
+                    <h:form>
+                        <p:commandButton action="#{pessoaBean.prepararAlterarPessoa()}" icon="ui-icon-pencil" />
+                    </h:form>  
+                </p:column>
 
-            <p:column headerText="Excluir" style="text-align: center; width:55px">
-                <h:form>           
-                    <p:growl id="message" showDetail="true" />
+                <p:column headerText="Excluir" style="text-align: center; width:55px">
+                    <h:form>           
+                        <p:growl id="message" showDetail="true" />
 
-                    <p:commandButton update="message" action="#{pessoaBean.excluirPessoa()}" icon="ui-icon-close">
-                        <p:confirm header="Atenção" message="Deseja realmente Excluir?" icon="ui-icon-alert" />
-                    </p:commandButton>
+                        <p:commandButton update="message" action="#{pessoaBean.excluirPessoa()}" icon="ui-icon-close">
+                            <p:confirm header="Atenção" message="Deseja realmente Excluir?" icon="ui-icon-alert" />
+                        </p:commandButton>
 
-                    <p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
-                        <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
-                        <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
-                    </p:confirmDialog>
-                </h:form>
-            </p:column>
+                        <p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
+                            <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+                            <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                        </p:confirmDialog>
+                    </h:form>
+                </p:column>
 
-        </p:dataTable>
+            </p:dataTable>
 
-
+        </div>
     </h:body>
 </html>
 

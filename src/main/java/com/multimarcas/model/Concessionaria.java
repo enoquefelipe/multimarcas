@@ -8,18 +8,18 @@ import javax.persistence.Id;
 
 @Entity(name = "tab_concessionaria")
 public class Concessionaria implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long id_concessionaria;
     private String nome;
 
-    public Long getId() {
-        return id;
+    public Long getId_concessionaria() {
+        return id_concessionaria;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId_concessionaria(Long id_concessionaria) {
+        this.id_concessionaria = id_concessionaria;
     }
 
     public String getNome() {
@@ -29,7 +29,5 @@ public class Concessionaria implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    
-    
+
 }

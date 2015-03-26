@@ -1,4 +1,4 @@
-package com.multimarca.controller;
+package com.multimarcas.controller;
 
 import com.multimarcas.dao.MarcaDao;
 import com.multimarcas.model.Marca;

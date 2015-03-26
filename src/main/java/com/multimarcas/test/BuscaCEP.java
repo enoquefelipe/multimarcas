@@ -1,4 +1,4 @@
-package com.multimarca.test;
+package com.multimarcas.test;
 
 public class BuscaCEP {
 

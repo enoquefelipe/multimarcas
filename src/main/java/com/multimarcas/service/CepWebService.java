@@ -1,4 +1,4 @@
-package com.multimarca.test;
+package com.multimarcas.service;
 
 import java.net.URL;
 import java.util.Iterator;

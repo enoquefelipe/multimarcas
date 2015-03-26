@@ -1,4 +1,4 @@
-package com.multimarca.controller;
+package com.multimarcas.controller;
 
 import com.multimarcas.model.Endereco;
 import javax.faces.bean.ManagedBean;

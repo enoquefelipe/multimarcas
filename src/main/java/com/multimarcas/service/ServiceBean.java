@@ -1,4 +1,4 @@
-package com.multimarca.service;
+package com.multimarcas.service;
 
 import java.io.Serializable;
 import javax.faces.application.FacesMessage;

@@ -1,6 +1,5 @@
-package com.multimarca.service;
+package com.multimarcas.test;
 
-import com.multimarca.test.*;
 import java.net.URL;
 import java.util.Iterator;
 import org.dom4j.Document;

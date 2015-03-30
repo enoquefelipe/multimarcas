@@ -3,7 +3,6 @@ package com.multimarcas.service;
 import java.io.Serializable;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-//import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
@@ -29,14 +28,8 @@ public class ServiceBean implements Serializable {
             setCidade(cepWebService.getCidade());
             setBairro(cepWebService.getBairro());
         } else {
-
-            FacesContext.getCurrentInstance().addMessage(
-                    null,
-                    new FacesMessage(FacesMessage.SEVERITY_ERROR,
-                            "Servidor não está respondendo",
-                            "Servidor não está respondendo"));
+            FacesContext.getCurrentInstance().addMessage( null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Servidor não está respondendo", "Servidor não está respondendo"));
         }
-
     }
 
     public String getCep() {

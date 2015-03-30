@@ -2,10 +2,13 @@ package com.multimarcas.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
 @Entity(name = "tab_pessoa")
@@ -18,6 +21,9 @@ public class Pessoa implements Serializable {
 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date data_nasc;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Endereco endereco;
 
     public Long getId_pessoa() {
         return id_pessoa;
@@ -41,8 +47,13 @@ public class Pessoa implements Serializable {
 
     public Date getData_nasc() {
         return data_nasc;
-    }    
-    
+    }
+
+    @MapsId
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
     public void setId_pessoa(Long id_pessoa) {
         this.id_pessoa = id_pessoa;
     }
@@ -66,7 +77,9 @@ public class Pessoa implements Serializable {
     public void setData_nasc(Date data_nasc) {
         this.data_nasc = data_nasc;
     }
-    
-    
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
 
 }

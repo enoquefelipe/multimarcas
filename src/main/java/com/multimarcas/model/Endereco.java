@@ -1,6 +1,9 @@
 package com.multimarcas.model;
 
+import com.multimarcas.service.CepWebService;
 import java.io.Serializable;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,15 +14,16 @@ public class Endereco implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id_endereco;
-    private String lagradouro, bairro, cep, cidade, estado, numero, complemento;
+    private Long id;
+    private String cep = null;
+    private String logradouro, bairro, cidade, estado, numero, complemento;
 
     public Endereco() {
     }
 
-    public Endereco(Long id, String lagradouro, String bairro, String cep, String cidade, String estado, String numero, String complemento) {
-        this.id_endereco = id;
-        this.lagradouro = lagradouro;
+    public Endereco(Long id, String logradouro, String bairro, String cep, String cidade, String estado, String numero, String complemento) {
+        this.id = id;
+        this.logradouro = logradouro;
         this.bairro = bairro;
         this.cep = cep;
         this.cidade = cidade;
@@ -27,21 +31,35 @@ public class Endereco implements Serializable {
         this.numero = numero;
         this.complemento = complemento;
     }
+    
+        public void encontraCEP() {
+        CepWebService cepWebService = new CepWebService(getCep());
+
+        if (cepWebService.getResultado() == 1) {
+//            setTipoLogradouro(cepWebService.getTipoLogradouro());
+            setLogradouro(cepWebService.getLogradouro());
+            setEstado(cepWebService.getEstado());
+            setCidade(cepWebService.getCidade());
+            setBairro(cepWebService.getBairro());
+        } else {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Servidor não está respondendo", "Servidor não está respondendo"));
+        }
+    }
 
     public Long getId_endereco() {
-        return id_endereco;
+        return id;
     }
 
     public void setId_endereco(Long id_endereco) {
-        this.id_endereco = id_endereco;
+        this.id = id_endereco;
     }
 
-    public String getLagradouro() {
-        return lagradouro;
+    public String getLogradouro() {
+        return logradouro;
     }
 
-    public void setLagradouro(String lagradouro) {
-        this.lagradouro = lagradouro;
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
     }
 
     public String getBairro() {

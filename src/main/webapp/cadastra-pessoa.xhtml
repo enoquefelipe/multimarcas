@@ -48,9 +48,7 @@
                         <h:outputText value="#{pessoaBean.pessoa.sexo}" />
 
                         <p:outputLabel value="Data Nascimento" for="data" />
-                        <p:calendar id="data" value="#{pessoaBean.pessoa.data_nasc}" showButtonPanel="true" mask="true">
-                            <f:convertDateTime pattern="dd/MM/yyyy" />
-                        </p:calendar>
+                        <p:inputMask id="data" value="#{pessoaBean.pessoa.data_nasc}" mask="99/99/9999"/>
                         <p:message for="data" />
                         <h:outputText value="#{pessoaBean.pessoa.data_nasc}" />          
 
@@ -83,7 +81,7 @@
                         <p:commandButton value="CEP" icon="ui-icon-search">
                             <f:ajax listener="#{pessoaBean.endereco.encontraCEP()}" execute="form-cadastro:cep" render="form-cadastro:cidade logradouro bairro uf" event="click"/>
                         </p:commandButton>
-                        
+
                         <p:commandButton value="Enviar" action="#{pessoaBean.addPessoa()}" icon="ui-icon-check" validateClient="true" ajax="false"/>
                     </h:panelGrid>  
 

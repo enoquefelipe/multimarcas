@@ -3,6 +3,9 @@ package com.multimarcas.controller;
 import com.multimarcas.dao.PessoaDao;
 import com.multimarcas.model.Endereco;
 import com.multimarcas.model.Pessoa;
+//import java.text.DateFormat;
+//import java.text.SimpleDateFormat;
+//import java.util.Date;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -16,6 +19,8 @@ public class PessoaBean {
     private Pessoa pessoa;
     private Endereco endereco;
     private DataModel listaPessoas;
+//    private String data;
+//    private Date dt;
 
     public String preparaAddPessoa() {
         endereco = new Endereco();
@@ -30,6 +35,9 @@ public class PessoaBean {
     }
 
     public String addPessoa() throws Exception {
+//        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+//        dt = (Date) (java.util.Date) formatter.parse(data);
+//        pessoa.setData_nasc(dt);
         PessoaDao pessoaDAO = new PessoaDao();
         pessoa.setEndereco(endereco);
         pessoaDAO.save(pessoa);
@@ -67,7 +75,6 @@ public class PessoaBean {
         return endereco;
     }
 
-
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
     }
@@ -80,4 +87,11 @@ public class PessoaBean {
         this.endereco = endereco;
     }
 
+//    public String getData() {
+//        return data;
+//    }
+//    
+//    public void setData(String data) {
+//        this.data = data;
+//    }
 }

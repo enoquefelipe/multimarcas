@@ -4,6 +4,7 @@ import com.multimarcas.model.Concessionaria;
 import com.multimarcas.model.Endereco;
 import com.multimarcas.model.Marca;
 import com.multimarcas.model.Pessoa;
+import com.multimarcas.model.Veiculo;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
@@ -23,6 +24,7 @@ public class HibernateUtil {
                 ac.addAnnotatedClass(Marca.class);
                 ac.addAnnotatedClass(Concessionaria.class);
                 ac.addAnnotatedClass(Endereco.class);
+                ac.addAnnotatedClass(Veiculo.class);
                 sessionFactory = ac.configure().buildSessionFactory();
             } catch (Throwable ex) {
                 System.err.println("Initial SessionFactory creation failed." + ex);

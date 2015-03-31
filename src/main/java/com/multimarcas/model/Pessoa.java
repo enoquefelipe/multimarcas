@@ -1,7 +1,7 @@
 package com.multimarcas.model;
 
 import java.io.Serializable;
-import java.util.Date;
+//import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
+//import javax.persistence.Temporal;
+//import javax.persistence.TemporalType;
 
 @Entity(name = "tab_pessoa")
 public class Pessoa implements Serializable {
@@ -18,10 +19,10 @@ public class Pessoa implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id_pessoa;
     private String nome, rg, cpf, sexo;
+    private String data_nasc;
 
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date data_nasc;
-
+//    @Temporal(TemporalType.DATE)
+//    private Date data_nasc;
     @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
 
@@ -45,7 +46,10 @@ public class Pessoa implements Serializable {
         return sexo;
     }
 
-    public Date getData_nasc() {
+//    public Date getData_nasc() {
+//        return data_nasc;
+//    }
+    public String getData_nasc() {
         return data_nasc;
     }
 
@@ -74,7 +78,10 @@ public class Pessoa implements Serializable {
         this.sexo = sexo;
     }
 
-    public void setData_nasc(Date data_nasc) {
+//    public void setData_nasc(Date data_nasc) {
+//        this.data_nasc = data_nasc;
+//    }
+    public void setData_nasc(String data_nasc) {
         this.data_nasc = data_nasc;
     }
 

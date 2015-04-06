@@ -1,24 +1,25 @@
 package com.multimarcas.dao;
 
-import com.multimarcas.model.Marca;
+import com.multimarcas.model.Veiculo;
 import com.multimarcas.util.HibernateUtil;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-public class MarcaDao {
+public class VeiculoDao {
 
-    public void save(Marca marca) {
+    public void save(Veiculo veiculo) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
-        session.save(marca);
+        session.save(veiculo);
         t.commit();
+        session.close();
     }
     
-        public List<Marca> list() {
+     public List<Veiculo> list() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
-        List lista = session.createQuery("from tab_marca").list();
+        List lista = session.createQuery("from tab_veiculo").list();
         t.commit();
         return lista;
     }

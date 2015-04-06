@@ -5,15 +5,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity(name = "tab_veiculo")
-public class Veiculo implements Serializable  {
+public class Veiculo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String modelo, ano, categoria, preco, motor, marca, img_princial;
+    private String modelo, ano, categoria, preco, motor, img_princial;
     //private String cor;
+    @ManyToOne
+    @JoinColumn(name = "marca_id")
+    private Marca marca;
 
     public Long getId() {
         return id;
@@ -63,19 +68,20 @@ public class Veiculo implements Serializable  {
         this.motor = motor;
     }
 
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
     public String getImg_princial() {
         return img_princial;
     }
 
     public void setImg_princial(String img_princial) {
         this.img_princial = img_princial;
-    } 
+    }
+
+    public Marca getMarca() {
+        return marca;
+    }
+
+    public void setMarca(Marca marca) {
+        this.marca = marca;
+    }
+
 }

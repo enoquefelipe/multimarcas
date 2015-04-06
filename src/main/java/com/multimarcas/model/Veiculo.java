@@ -17,7 +17,7 @@ public class Veiculo implements Serializable {
     private String modelo, ano, categoria, preco, motor, img_princial;
     //private String cor;
     @ManyToOne
-    @JoinColumn(name = "marca_id")
+    @JoinColumn(name = "id_marca")
     private Marca marca;
 
     public Long getId() {

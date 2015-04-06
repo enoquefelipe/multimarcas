@@ -54,8 +54,8 @@
                         </p:selectOneMenu>
 
                         <p:outputLabel value="Marca"/>
-                        <p:selectOneMenu value="#{veiculoBean.marca}">    
-                            <f:selectItems value="#{veiculoBean.marcas}" itemValue="#{veiculoBean.marcas}"/>    
+                        <p:selectOneMenu value="#{veiculoBean.id_marca}">    
+                            <f:selectItems value="#{veiculoBean.marcas}"  var="marca" itemValue="#{marca.id}" itemLabel="#{marca.nome}"/>    
                         </p:selectOneMenu>  
 
                         <p:commandButton value="Enviar" action="#{veiculoBean.addVeiculo()}" icon="ui-icon-check" />

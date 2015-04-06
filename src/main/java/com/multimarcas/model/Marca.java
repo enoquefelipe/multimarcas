@@ -15,7 +15,7 @@ public class Marca implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id_marca;
+    private Long id;
     private String nome;
 
     @OneToMany(mappedBy = "marca", targetEntity = Veiculo.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -26,13 +26,13 @@ public class Marca implements Serializable {
         return ""+nome;
     }      
 
-    public Long getId_marca() {
-        return id_marca;
+    public Long getId() {
+        return id;
     }
 
-    public void setId_marca(Long id_marca) {
-        this.id_marca = id_marca;
-    }
+    public void setId(Long id) {
+        this.id = id;
+    }  
 
     public String getNome() {
         return nome;

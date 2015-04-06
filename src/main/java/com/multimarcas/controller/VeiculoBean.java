@@ -15,9 +15,8 @@ public class VeiculoBean {
 
     private Veiculo veiculo;
     private Marca marca;
+    private Long id;
     private DataModel listaVeiculos;
-//  private Map marcas = null;
-//  private ListDataModel model;
     private List marcas;
 
     public String preparaAddVeiculo() {
@@ -30,16 +29,11 @@ public class VeiculoBean {
         marcas = mdao.list();
         return marcas;
     }
-//        marcas = new LinkedHashMap();
-//        for (Marca c : mdao.list()) {
-//        marcas.put(c.getNome(), c.getNome());
 
     public String addVeiculo() {
         VeiculoDao dao = new VeiculoDao();
-//        Marca marca = new Marca();
-//        marca.setNome("GM");
-//        MarcaDao mdao = new MarcaDao();
-//        mdao.save(marca);
+        marca = new Marca();
+        marca.setId(id);
         veiculo.setMarca(this.marca);
         dao.save(veiculo);
         return "index";
@@ -67,5 +61,13 @@ public class VeiculoBean {
 
     public void setMarca(Marca marca) {
         this.marca = marca;
+    }
+
+    public Long getId_marca() {
+        return id;
+    }
+
+    public void setId_marca(Long id_marca) {
+        this.id = id_marca;
     }
 }

@@ -13,28 +13,32 @@
         </div> 
 
         <h:form>
-            <h1> Cadastro de Endereço </h1>
-            <h:panelGrid columns="2">
 
-                <h:outputText value="CEP: " />
-                <p:inputMask mask="99999-999" value="#{enderecoBean.endereco.cep}" />
+            <p:panel header="Cadastro de Endereço">
+                <h:panelGrid columns="2">
 
-                <h:outputLabel value="Logradouro: "/>
-                <h:inputText  value="#{enderecoBean.endereco.logradouro}"/>
+                    <p:outputLabel for="cep" value="CEP"/>
+                    <p:inputMask size="9" mask="99999-999" id="cep" value="#{enderecoBean.endereco.cep}" />
 
-                <h:outputLabel value="UF" />
-                <p:inputText size="5" value="#{enderecoBean.endereco.estado}" />
+                    <p:outputLabel for="logradouro" value="Logradouro"/>
+                    <p:inputText id="logradouro" value="#{enderecoBean.endereco.logradouro}"/>
 
-                <h:outputLabel value="Cidade" />
-                <p:inputText size="50" value="#{enderecoBean.endereco.cidade}" />
+                    <p:outputLabel for="bairro" value="Bairro"/>
+                    <p:inputText id="bairro" size="15" value="#{enderecoBean.endereco.bairro}" />
 
-                <h:outputLabel value="Bairro:" />
-                <p:inputText size="25" value="#{enderecoBean.endereco.bairro}" />
+                    <p:outputLabel for="uf" value="UF"/>
+                    <p:inputText id="uf" size="2" value="#{enderecoBean.endereco.estado}" />
 
-                <h:commandButton value="Enviar" action="#{enderecoBean.addEndereco()}"/>
-                
-            </h:panelGrid>
+                    <p:outputLabel for="cidade" value="Cidade"/>
+                    <p:inputText id="cidade" size="15" value="#{enderecoBean.endereco.cidade}" />
 
+                    <p:outputLabel for="numero" value="Numero"/>
+                    <p:inputText id="numero" size="4" value="#{enderecoBean.endereco.numero}"/>
+                    
+                    <p:commandButton value="Enviar" action="#{enderecoBean.addEndereco()}"/>
+
+                </h:panelGrid>
+            </p:panel>
         </h:form>
 
     </h:body>

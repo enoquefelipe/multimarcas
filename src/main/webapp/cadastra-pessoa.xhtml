@@ -20,8 +20,8 @@
             <h:form id="form-cadastro">
                 <h:outputScript name="jsf.js" library="javax.faces" target="head"/>
 
-                <p:panel header="Cadastro de Pessoa" id="titulo-cadastro" style="margin-top: 10px;">
-                    <h:panelGrid columns="4" cellpadding="5">
+                <p:panel header="Dados Pessoais" id="titulo-cadastro" style="margin-top: 10px;">
+                    <h:panelGrid columns="4" cellpadding="2">
 
                         <p:outputLabel value="Nome" for="nome"/>
                         <p:inputText id="nome" value="#{pessoaBean.pessoa.nome}" required="true" label="Nome" requiredMessage="Campo nome é obrigatorio!"/>
@@ -56,12 +56,11 @@
 
                 </p:panel>
 
-                <p:panel header="Endereço">  
+                <p:panel header="Dados de Endereço">  
 
-                    <h:panelGrid columns="2" cellpadding="5"> 
-                        <h:outputText value="CEP:"/>
+                    <h:panelGrid columns="2" cellpadding="2"> 
+                        <p:outputLabel for="cep" value="CEP:"/>
                         <p:inputMask id="cep" mask="99999-999" style="width:70px" value="#{pessoaBean.endereco.cep}"/>
-
 
                         <p:outputLabel for="logradouro" value="Logradouro" />   
                         <p:inputText id="logradouro" value="#{pessoaBean.endereco.logradouro}"/>  

@@ -36,7 +36,7 @@ public class Endereco implements Serializable {
         CepWebService cepWebService = new CepWebService(getCep());
 
         if (cepWebService.getResultado() == 1) {
-//            setTipoLogradouro(cepWebService.getTipoLogradouro());
+//          setTipoLogradouro(cepWebService.getTipoLogradouro());
             setLogradouro(cepWebService.getLogradouro());
             setEstado(cepWebService.getEstado());
             setCidade(cepWebService.getCidade());

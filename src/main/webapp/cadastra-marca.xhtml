@@ -18,11 +18,12 @@
             <div class="container-principal">
                 <p:panel header="Cadastro de Marca" style="text-align: center;">
                     <h:panelGrid columns="2">
-                        <p:outputLabel value="Marca >> " for="marca"/>
+                        <p:outputLabel value="Marca >>" for="marca"/>
                         <p:inputText id="marca" value="#{marcaBean.marca.nome}"/>
                         <p:commandButton value="Enviar" action="#{marcaBean.addMarca()}" icon="ui-icon-check"/>
                     </h:panelGrid>
                 </p:panel>
+            </div>
         </h:form>
 
     </h:body>

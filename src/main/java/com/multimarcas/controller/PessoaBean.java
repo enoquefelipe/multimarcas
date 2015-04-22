@@ -1,6 +1,7 @@
 package com.multimarcas.controller;
 
 import com.multimarcas.dao.PessoaDao;
+import com.multimarcas.model.Contato;
 import com.multimarcas.model.Endereco;
 import com.multimarcas.model.Pessoa;
 //import java.text.DateFormat;
@@ -18,6 +19,7 @@ public class PessoaBean {
 
     private Pessoa pessoa;
     private Endereco endereco;
+    private Contato contato;
     private DataModel listaPessoas;
 //    private String data;
 //    private Date dt;
@@ -25,7 +27,7 @@ public class PessoaBean {
     public String preparaAddPessoa() {
         endereco = new Endereco();
         pessoa = new Pessoa();
-
+        contato = new Contato();
         return "addPessoa";
     }
 
@@ -40,6 +42,7 @@ public class PessoaBean {
 //        pessoa.setData_nasc(dt);
         PessoaDao pessoaDAO = new PessoaDao();
         pessoa.setEndereco(endereco);
+        pessoa.setContato(contato);
         pessoaDAO.save(pessoa);
         return "listaPessoas";
     }
@@ -75,6 +78,10 @@ public class PessoaBean {
         return endereco;
     }
 
+    public Contato getContato() {
+        return contato;
+    }   
+
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
     }
@@ -86,6 +93,10 @@ public class PessoaBean {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
+    
+    public void setContato(Contato contato) {
+        this.contato = contato;
+    }    
 
 //    public String getData() {
 //        return data;
@@ -94,4 +105,5 @@ public class PessoaBean {
 //    public void setData(String data) {
 //        this.data = data;
 //    }
+
 }

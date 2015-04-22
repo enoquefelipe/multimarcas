@@ -80,25 +80,31 @@
                             <f:ajax listener="#{pessoaBean.endereco.encontraCEP()}" execute="form-cadastro:cep" render="form-cadastro:cidade logradouro bairro uf" event="click"/>
                         </p:commandButton>
 
-                        <p:commandButton value="Enviar" action="#{pessoaBean.addPessoa()}" icon="ui-icon-check" validateClient="true" ajax="false"/>
                     </h:panelGrid>  
 
                 </p:panel>
 
                 <p:panel header="Dados de Contato">  
                     <h:panelGrid columns="2"> 
-                        <p:outputLabel for="residencial" value="Residencial" />   
-                        <p:inputMask id="residencial" value="#{contatoBean.contato.residencial}"  mask="99 9999-9999" style="width:100px"/>  
+                        <p:outputLabel for="residencial" value="Telefone" />   
+                        <p:inputMask id="residencial" value="#{pessoaBean.contato.residencial}" mask="(99)9999-9999" style="width:100px"/>  
 
-                        <p:outputLabel for="comercial" value="Comercia" />   
-                        <p:inputMask id="comercial" value="#{contatoBean.contato.comercial}"  mask="99 9999-9999" style="width:100px"/>  
+                        <p:outputLabel for="comercial" value="Comercial" />   
+                        <p:inputMask id="comercial" value="#{pessoaBean.contato.comercial}" mask="(99)9999-9999" style="width:100px"/>  
 
-                        <p:outputLabel for="movel" value="Móvel" />   
-                        <p:inputMask id="movel" value="#{contatoBean.contato.movel}"  mask="99 99999-9999" style="width:100px"/>  
+                        <p:outputLabel for="movel" value="Celular" />   
+                        <p:inputMask id="movel" value="#{pessoaBean.contato.movel}" mask="(99)99999-9999" style="width:100px"/>  
                         
-                         <p:outputLabel for="email" value="E-mail" />   
-                         <p:inputMask id="email" value="#{contatoBean.contato.email}"  mask="" style="width:200px"/> 
+                        <p:outputLabel for="fax" value="Fax" />   
+                        <p:inputMask id="fax" value="#{pessoaBean.contato.movel}" mask="(99)9999-9999" style="width:100px"/>  
 
+                        <p:outputLabel for="email" value="E-mail" />   
+                        <p:inputMask id="email" value="#{pessoaBean.contato.email}" mask="" /> 
+
+                        <p:outputLabel for="site" value="Site" />   
+                        <p:inputMask id="site" value="#{pessoaBean.contato.site}" mask="" /> 
+
+                        <p:commandButton value="Enviar" action="#{pessoaBean.addPessoa()}" icon="ui-icon-check" validateClient="true" ajax="false"/>
                     </h:panelGrid>
                 </p:panel>
 

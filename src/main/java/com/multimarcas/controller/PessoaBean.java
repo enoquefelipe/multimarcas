@@ -25,9 +25,7 @@ public class PessoaBean {
 //    private Date dt;
 
     public String preparaAddPessoa() {
-        endereco = new Endereco();
         pessoa = new Pessoa();
-        contato = new Contato();
         return "addPessoa";
     }
 
@@ -37,12 +35,10 @@ public class PessoaBean {
     }
 
     public String addPessoa() throws Exception {
-//        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-//        dt = (Date) (java.util.Date) formatter.parse(data);
-//        pessoa.setData_nasc(dt);
+//      DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+//      dt = (Date) (java.util.Date) formatter.parse(data);
+//      pessoa.setData_nasc(dt);
         PessoaDao pessoaDAO = new PessoaDao();
-        pessoa.setEndereco(endereco);
-        pessoa.setContato(contato);
         pessoaDAO.save(pessoa);
         return "listaPessoas";
     }

@@ -1,38 +1,55 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
-    <h:head>
-        <title> Home </title>
-    </h:head>
-    <h:body>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/templates/layout.xhtml">
 
-        <div id="topo">  
-            <ui:include src="menu.xhtml"/>  
-        </div>
-        <div class="container-principal">
-            <div class="ui-grid ui-grid-responsive" id="grid-home">
+    <ui:define name="content">
+        <h1 class="aw-page-title">Home</h1>
+        <hr></hr>
 
-                <div class="ui-grid-row">
-                    <div class="ui-grid-col-4">
-                        <p>Bem vindo ao projeto Multimarcas Car!</p>
+        <h:form id="frm">
+            <div class="container-principal">
+                <div class="ui-grid ui-grid-responsive" id="grid-home">
+
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-4">
+                            <p>
+                                <p:link value="Cadastra Pessoa" outcome="#{pessoaBean.preparaAddPessoa()}"/>
+                            </p>
+                            <p>
+                                <p:link value="Cadastra Endereço" outcome="#{enderecoBean.preparaAddEndereco()}"/>
+                            </p>
+                            <p>
+                                <p:link value="Cadastra Marca" outcome="#{marcaBean.preparaAddMarca()}"/>
+                            </p>
+                            <p>
+                                <p:link value="Cadastra Veículo" outcome="#{veiculoBean.preparaAddVeiculo()}"/>
+                            </p>
+                            <p>
+                                <p:link value="Lista Pessoas" outcome="listaPessoas"/>
+                            </p>
+                            <p>
+                                <p:link value="Página Teste" outcome="teste"/>
+                            </p>
+                        </div>
+
+                        <div class="ui-grid-col-4">
+                            <p>Bem vindo ao projeto Multimarcas Car!</p>
+
+                            <h1> Horário atual </h1>
+                            <p:clock pattern="HH:mm:ss - dd.MM.yyyy" mode="server" />
+                        </div>
+
+                        <div class="ui-grid-col-4">
+
+                        </div>
                     </div>
 
-                    <div class="ui-grid-col-4">
-                        <h1> Horário atual </h1>
-                        <p:clock pattern="HH:mm:ss - dd.MM.yyyy" mode="server" />
-                    </div>
-
-                    <div class="ui-grid-col-4">
-                        <p>Bem vindo ao projeto Multimarcas Car!</p>
-                    </div>
                 </div>
-
             </div>
-        </div>
-        
-    </h:body>
-</html>
+        </h:form>
+    </ui:define>
 
+</ui:composition>

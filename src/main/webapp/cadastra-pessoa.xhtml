@@ -1,116 +1,109 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"  
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
-    <h:head>
-        <title> Cadastro </title>
-        <link rel="StyleSheet" type="text/css" href="css/style.css" media="screen" />
-    </h:head>
-    <h:body>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/templates/layout.xhtml">
 
-        <div id="topo">  
-            <ui:include src="menu.xhtml"/>  
-        </div> 
+    <ui:define name="content">
+        <h1 class="aw-page-title">Cadastro de Pessoas</h1>
+        <hr></hr>
 
-        <div class="container-principal">
-            <h:form id="form-cadastro">
-                <h:outputScript name="jsf.js" library="javax.faces" target="head"/>
 
-                <p:panel header="Dados Pessoais" id="titulo-cadastro" style="margin-top: 10px;">
-                    <h:panelGrid columns="4">
+        <h:form id="form-cadastro">
+            <h:outputScript name="jsf.js" library="javax.faces" target="head"/>
 
-                        <p:outputLabel value="Nome" for="nome"/>
-                        <p:inputText id="nome" value="#{pessoaBean.pessoa.nome}" required="true" label="Nome" requiredMessage="Campo nome é obrigatorio!"/>
-                        <p:message for="nome" />
-                        <h:outputText value="#{pessoaBean.pessoa.nome}" />
+            <p:panel header="Dados Pessoais" id="titulo-cadastro" style="margin-top: 10px;">
+                <h:panelGrid columns="4">
 
-                        <p:outputLabel value="RG" for="rg" />
-                        <p:inputText id="rg" value="#{pessoaBean.pessoa.rg}" required="true" />
-                        <p:message for="rg" />
-                        <h:outputText value="#{pessoaBean.pessoa.rg}" />
+                    <p:outputLabel value="Nome" for="nome"/>
+                    <p:inputText id="nome" value="#{pessoaBean.pessoa.nome}" required="true" label="Nome" requiredMessage="Campo nome é obrigatorio!"/>
+                    <p:message for="nome" />
+                    <h:outputText value="#{pessoaBean.pessoa.nome}" />
 
-                        <p:outputLabel value="CPF" for="cpf" />
-                        <p:inputMask id="cpf" value="#{pessoaBean.pessoa.cpf}" required="true" mask="999.999.999-99"/>
-                        <p:message for="cpf" />
-                        <h:outputText value="#{pessoaBean.pessoa.cpf}" />          
+                    <p:outputLabel value="RG" for="rg" />
+                    <p:inputText id="rg" value="#{pessoaBean.pessoa.rg}" required="true" />
+                    <p:message for="rg" />
+                    <h:outputText value="#{pessoaBean.pessoa.rg}" />
 
-                        <p:outputLabel value="Sexo" for="sexo" />
-                        <p:selectOneMenu id="sexo" value="#{pessoaBean.pessoa.sexo}" style="width:130px">
-                            <f:selectItem itemLabel="" noSelectionOption="true" />
-                            <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
-                            <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
-                        </p:selectOneMenu>
-                        <p:message for="sexo" />
-                        <h:outputText value="#{pessoaBean.pessoa.sexo}" />
+                    <p:outputLabel value="CPF" for="cpf" />
+                    <p:inputMask id="cpf" value="#{pessoaBean.pessoa.cpf}" required="true" mask="999.999.999-99"/>
+                    <p:message for="cpf" />
+                    <h:outputText value="#{pessoaBean.pessoa.cpf}" />          
 
-                        <p:outputLabel value="Data Nascimento" for="data" />
-                        <p:inputMask id="data" value="#{pessoaBean.pessoa.data_nasc}" mask="99/99/9999"/>
-                        <p:message for="data" />
-                        <h:outputText value="#{pessoaBean.pessoa.data_nasc}" />          
+                    <p:outputLabel value="Sexo" for="sexo" />
+                    <p:selectOneMenu id="sexo" value="#{pessoaBean.pessoa.sexo}" style="width:130px">
+                        <f:selectItem itemLabel="" noSelectionOption="true" />
+                        <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+                        <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+                    </p:selectOneMenu>
+                    <p:message for="sexo" />
+                    <h:outputText value="#{pessoaBean.pessoa.sexo}" />
 
-                    </h:panelGrid>
+                    <p:outputLabel value="Data Nascimento" for="data" />
+                    <p:inputMask id="data" value="#{pessoaBean.pessoa.data_nasc}" mask="99/99/9999"/>
+                    <p:message for="data" />
+                    <h:outputText value="#{pessoaBean.pessoa.data_nasc}" />          
 
-                </p:panel>
+                </h:panelGrid>
 
-                <p:panel header="Dados de Endereço">  
+            </p:panel>
 
-                    <h:panelGrid columns="2"> 
-                        <p:outputLabel value="CEP:" for="cep"/>
-                        <p:inputMask id="cep" mask="99999-999" style="width:70px" value="#{pessoaBean.endereco.cep}"/>
+            <p:panel header="Dados de Endereço">  
 
-                        <p:outputLabel for="logradouro" value="Logradouro" />   
-                        <p:inputText id="logradouro" value="#{pessoaBean.endereco.logradouro}"/>  
+                <h:panelGrid columns="2"> 
+                    <p:outputLabel value="CEP:" for="cep"/>
+                    <p:inputMask id="cep" mask="99999-999" style="width:70px" value="#{pessoaBean.pessoa.endereco.cep}"/>
 
-                        <p:outputLabel for="bairro" value="Bairro" />   
-                        <p:inputText id="bairro" value="#{pessoaBean.endereco.bairro}" />  
+                    <p:outputLabel for="logradouro" value="Logradouro" />   
+                    <p:inputText id="logradouro" value="#{pessoaBean.pessoa.endereco.logradouro}"/>  
 
-                        <p:outputLabel for="uf" value="UF"  />   
-                        <p:inputMask id="uf" style="width:50px" mask="a*" value="#{pessoaBean.endereco.estado}" />  
+                    <p:outputLabel for="bairro" value="Bairro" />   
+                    <p:inputText id="bairro" value="#{pessoaBean.pessoa.endereco.bairro}" />  
 
-                        <p:outputLabel for="cidade" value="Cidade" />   
-                        <p:inputText id="cidade" value="#{pessoaBean.endereco.cidade}"  />  
+                    <p:outputLabel for="uf" value="UF"  />   
+                    <p:inputMask id="uf" style="width:50px" mask="a*" value="#{pessoaBean.pessoa.endereco.estado}" />  
 
-                        <p:outputLabel for="numero" value="Número" />   
-                        <p:inputText id="numero" value="#{pessoaBean.endereco.numero}" style="width:40px"/>  
+                    <p:outputLabel for="cidade" value="Cidade" />   
+                    <p:inputText id="cidade" value="#{pessoaBean.pessoa.endereco.cidade}"  />  
 
-                        <p:commandButton value="CEP" icon="ui-icon-search">
-                            <f:ajax listener="#{pessoaBean.endereco.encontraCEP()}" execute="form-cadastro:cep" render="form-cadastro:cidade logradouro bairro uf" event="click"/>
-                        </p:commandButton>
+                    <p:outputLabel for="numero" value="Número" />   
+                    <p:inputText id="numero" value="#{pessoaBean.pessoa.endereco.numero}" style="width:40px"/>  
 
-                    </h:panelGrid>  
+                    <p:commandButton value="CEP" icon="ui-icon-search">
+                        <f:ajax listener="#{pessoaBean.pessoa.endereco.encontraCEP()}" execute="form-cadastro:cep" render="form-cadastro:cidade logradouro bairro uf" event="click"/>
+                    </p:commandButton>
 
-                </p:panel>
+                </h:panelGrid>  
 
-                <p:panel header="Dados de Contato">  
-                    <h:panelGrid columns="2"> 
-                        <p:outputLabel for="residencial" value="Telefone" />   
-                        <p:inputMask id="residencial" value="#{pessoaBean.contato.residencial}" mask="(99)9999-9999" style="width:100px"/>  
+            </p:panel>
 
-                        <p:outputLabel for="comercial" value="Comercial" />   
-                        <p:inputMask id="comercial" value="#{pessoaBean.contato.comercial}" mask="(99)9999-9999" style="width:100px"/>  
+            <p:panel header="Dados de Contato">  
+                <h:panelGrid columns="2"> 
+                    <p:outputLabel for="residencial" value="Telefone" />   
+                    <p:inputMask id="residencial" value="#{pessoaBean.pessoa.contato.residencial}" mask="(99)9999-9999" style="width:100px"/>  
 
-                        <p:outputLabel for="movel" value="Celular" />   
-                        <p:inputMask id="movel" value="#{pessoaBean.contato.movel}" mask="(99)99999-9999" style="width:100px"/>  
-                        
-                        <p:outputLabel for="fax" value="Fax" />   
-                        <p:inputMask id="fax" value="#{pessoaBean.contato.movel}" mask="(99)9999-9999" style="width:100px"/>  
+                    <p:outputLabel for="comercial" value="Comercial" />   
+                    <p:inputMask id="comercial" value="#{pessoaBean.pessoa.contato.comercial}" mask="(99)9999-9999" style="width:100px"/>  
 
-                        <p:outputLabel for="email" value="E-mail" />   
-                        <p:inputMask id="email" value="#{pessoaBean.contato.email}" mask="" /> 
+                    <p:outputLabel for="movel" value="Celular" />   
+                    <p:inputMask id="movel" value="#{pessoaBean.pessoa.contato.movel}" mask="(99)99999-9999" style="width:100px"/>  
 
-                        <p:outputLabel for="site" value="Site" />   
-                        <p:inputMask id="site" value="#{pessoaBean.contato.site}" mask="" /> 
+                    <p:outputLabel for="fax" value="Fax" />   
+                    <p:inputMask id="fax" value="#{pessoaBean.pessoa.contato.movel}" mask="(99)9999-9999" style="width:100px"/>  
 
-                        <p:commandButton value="Enviar" action="#{pessoaBean.addPessoa()}" icon="ui-icon-check" validateClient="true" ajax="false"/>
-                    </h:panelGrid>
-                </p:panel>
+                    <p:outputLabel for="email" value="E-mail" />   
+                    <p:inputMask id="email" value="#{pessoaBean.pessoa.contato.email}" mask="" /> 
 
-            </h:form>   
+                    <p:outputLabel for="site" value="Site" />   
+                    <p:inputMask id="site" value="#{pessoaBean.pessoa.contato.site}" mask="" /> 
 
-        </div>
-    </h:body>
-</html>
+                    <p:commandButton value="Enviar" action="#{pessoaBean.addPessoa()}" icon="ui-icon-check" validateClient="true" ajax="false"/>
+                </h:panelGrid>
+            </p:panel>
 
+        </h:form>   
+
+    </ui:define>
+
+</ui:composition>

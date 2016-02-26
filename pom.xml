@@ -15,8 +15,7 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
- 
-    
+
     <dependencies>
         
         <dependency>
@@ -24,24 +23,33 @@
             <artifactId>ojdbc</artifactId>
             <version>14</version>
         </dependency>
-        <!--
+   
         <dependency>
-            <groupId>org.primefaces.extensions</groupId>
-            <artifactId>all-themes</artifactId>
-            <version>1.0.8</version>
-        </dependency> 
-        -->    
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>5.3</version>
+            <scope>compile</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.primefaces.themes</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>1.0.10</version>
+            <scope>compile</scope>
+        </dependency>
+        
         <dependency>            
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.6</version>
         </dependency>
+        
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>sqljdbc4</artifactId>
             <version>4.0</version>
         </dependency>
-
+        
         <dependency> 
             <groupId>javax.validation</groupId> 
             <artifactId>validation-api</artifactId> 
@@ -87,11 +95,6 @@
         </dependency>
         
         <!-- For 3.5 and older -->  
-        <dependency>  
-            <groupId>org.primefaces</groupId>  
-            <artifactId>primefaces</artifactId>  
-            <version>5.0</version>  
-        </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-commons-annotations</artifactId>

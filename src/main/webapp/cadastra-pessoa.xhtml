@@ -6,14 +6,11 @@
                 template="/WEB-INF/templates/layout.xhtml">
 
     <ui:define name="content">
-        <h1 class="aw-page-title">Cadastro de Pessoas</h1>
-        <hr></hr>
+        
+        <h:form id="form-cadastro-pessoa">
+         <!--   <h:outputScript name="jsf.js" library="javax.faces" target="head"/> -->
 
-
-        <h:form id="form-cadastro">
-            <h:outputScript name="jsf.js" library="javax.faces" target="head"/>
-
-            <p:panel header="Dados Pessoais" id="titulo-cadastro" style="margin-top: 10px;">
+            <p:panel header="Dados Pessoais" id="titulo-cadastro">
                 <h:panelGrid columns="4">
 
                     <p:outputLabel value="Nome" for="nome"/>
@@ -49,8 +46,7 @@
 
             </p:panel>
 
-            <p:panel header="Dados de Endereço">  
-
+            <p:panel header="Dados de Endereço" style="margin-top:10px;">  
                 <h:panelGrid columns="2"> 
                     <p:outputLabel value="CEP:" for="cep"/>
                     <p:inputMask id="cep" mask="99999-999" style="width:70px" value="#{pessoaBean.pessoa.endereco.cep}"/>
@@ -73,12 +69,11 @@
                     <p:commandButton value="CEP" icon="ui-icon-search">
                         <f:ajax listener="#{pessoaBean.pessoa.endereco.encontraCEP()}" execute="form-cadastro:cep" render="form-cadastro:cidade logradouro bairro uf" event="click"/>
                     </p:commandButton>
-
                 </h:panelGrid>  
 
             </p:panel>
 
-            <p:panel header="Dados de Contato">  
+            <p:panel header="Dados de Contato"  style="margin-top: 10px;">  
                 <h:panelGrid columns="2"> 
                     <p:outputLabel for="residencial" value="Telefone" />   
                     <p:inputMask id="residencial" value="#{pessoaBean.pessoa.contato.residencial}" mask="(99)9999-9999" style="width:100px"/>  

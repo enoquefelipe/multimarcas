@@ -1,31 +1,19 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/templates/layout.xhtml">
+    <ui:define name="content">
 
-    <h:head>
-        <title> Cadastro de Marca </title>
-    </h:head>
-    <h:body>
-
-        <div id="topo">  
-            <ui:include src="menu.xhtml"/>  
-        </div> 
-
-        <h:form>
-            <div class="container-principal">
-                <p:panel header="Cadastro de Marca" style="text-align: center;">
-                    <h:panelGrid columns="2">
-                        <p:outputLabel value="Marca >>" for="marca"/>
-                        <p:inputText id="marca" value="#{marcaBean.marca.nome}"/>
-                        <p:commandButton value="Enviar" action="#{marcaBean.addMarca()}" icon="ui-icon-check"/>
-                    </h:panelGrid>
-                </p:panel>
-            </div>
+        <h:form style="padding-top: 15px;">
+            <p:panel header="Cadastro de Marca" style="text-align: center;">
+                <h:panelGrid columns="2">
+                    <p:outputLabel value="Marca >>" for="marca"/>
+                    <p:inputText id="marca" value="#{marcaBean.marca.nome}"/>
+                    <p:commandButton value="Enviar" action="#{marcaBean.addMarca()}" icon="ui-icon-check"/>
+                </h:panelGrid>
+            </p:panel>
         </h:form>
 
-    </h:body>
-</html>
-
+    </ui:define>
+</ui:composition>

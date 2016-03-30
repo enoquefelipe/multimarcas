@@ -73,3 +73,11 @@ nav ul li:hover ul{
 li{
     text-decoration: none;
 }
+
+#form-cadastro-pessoa{
+    padding-top: 15px;  
+}
+
+#titulo-home{
+    text-align: center;
+}

@@ -1,70 +1,59 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"  
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
-    <h:head>
-        <title>Cadastrar Veículo</title>
-        <link rel="StyleSheet" type="text/css" href="css/style.css" media="screen" />
-    </h:head>
-    <h:body>
-        <div id="topo">  
-            <ui:include src="menu.xhtml"/>  
-        </div> 
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/templates/layout.xhtml">
+    <ui:define name="content">
 
-        <div class="container-principal">
-            <h:form>
-                <p:panel id="basic" header="Dados do Veículo" >
-                    <h:panelGrid columns="2">
+        <h:form style="padding-top: 15px;">
+            <p:panel id="basic" header="Dados do Veículo" >
+                <h:panelGrid columns="2">
 
-                        <p:outputLabel value="Modelo" for="modelo"/>
-                        <p:inputText id="modelo" value="#{veiculoBean.veiculo.modelo}"/>
+                    <p:outputLabel value="Modelo" for="modelo"/>
+                    <p:inputText id="modelo" value="#{veiculoBean.veiculo.modelo}"/>
 
-                        <p:outputLabel value="Fabricação" for="fabricacao" />
-                        <p:selectOneMenu id="fabricacao"  style="width:100px" value="#{veiculoBean.veiculo.ano}">
-                            <f:selectItem itemLabel="2015" itemValue="2015" />
-                            <f:selectItem itemLabel="2014" itemValue="2014" />
-                            <f:selectItem itemLabel="2013" itemValue="2013" />
-                            <f:selectItem itemLabel="2012" itemValue="2012" />
-                            <f:selectItem itemLabel="2011" itemValue="2011" />
-                        </p:selectOneMenu>
+                    <p:outputLabel value="Fabricação" for="fabricacao" />
+                    <p:selectOneMenu id="fabricacao"  style="width:100px" value="#{veiculoBean.veiculo.ano}">
+                        <f:selectItem itemLabel="2015" itemValue="2015" />
+                        <f:selectItem itemLabel="2014" itemValue="2014" />
+                        <f:selectItem itemLabel="2013" itemValue="2013" />
+                        <f:selectItem itemLabel="2012" itemValue="2012" />
+                        <f:selectItem itemLabel="2011" itemValue="2011" />
+                    </p:selectOneMenu>
 
-                        <p:outputLabel value="Categoria" for="cat" />
-                        <p:selectOneMenu id="cat"  style="width:100px" value="#{veiculoBean.veiculo.categoria}">
-                            <f:selectItem itemLabel="Hatch" itemValue="Hatch" />
-                            <f:selectItem itemLabel="Pick-Up" itemValue="Pick-Up" />
-                            <f:selectItem itemLabel="Sedan" itemValue="Sedan" />
-                        </p:selectOneMenu>
+                    <p:outputLabel value="Categoria" for="cat" />
+                    <p:selectOneMenu id="cat"  style="width:100px" value="#{veiculoBean.veiculo.categoria}">
+                        <f:selectItem itemLabel="Hatch" itemValue="Hatch" />
+                        <f:selectItem itemLabel="Pick-Up" itemValue="Pick-Up" />
+                        <f:selectItem itemLabel="Sedan" itemValue="Sedan" />
+                    </p:selectOneMenu>
 
-                        <p:outputLabel value="Preço"/>
-                        <p:inputText value="#{veiculoBean.veiculo.preco}"/>
+                    <p:outputLabel value="Preço"/>
+                    <p:inputText value="#{veiculoBean.veiculo.preco}"/>
 
-                        <p:outputLabel value="Motor"/>
-                        <p:selectOneMenu style="width:70px" value="#{veiculoBean.veiculo.motor}">
-                            <f:selectItem itemLabel="1.0" itemValue="1.0" />
-                            <f:selectItem itemLabel="1.3" itemValue="1.3" />
-                            <f:selectItem itemLabel="1.4" itemValue="1.4" />
-                            <f:selectItem itemLabel="1.5" itemValue="1.5" />
-                            <f:selectItem itemLabel="1.6" itemValue="1.6" />
-                            <f:selectItem itemLabel="1.8" itemValue="1.8" />
-                            <f:selectItem itemLabel="2.0" itemValue="2.0" />
-                            <f:selectItem itemLabel="2.3" itemValue="2.3" />
-                        </p:selectOneMenu>
+                    <p:outputLabel value="Motor"/>
+                    <p:selectOneMenu style="width:70px" value="#{veiculoBean.veiculo.motor}">
+                        <f:selectItem itemLabel="1.0" itemValue="1.0" />
+                        <f:selectItem itemLabel="1.3" itemValue="1.3" />
+                        <f:selectItem itemLabel="1.4" itemValue="1.4" />
+                        <f:selectItem itemLabel="1.5" itemValue="1.5" />
+                        <f:selectItem itemLabel="1.6" itemValue="1.6" />
+                        <f:selectItem itemLabel="1.8" itemValue="1.8" />
+                        <f:selectItem itemLabel="2.0" itemValue="2.0" />
+                        <f:selectItem itemLabel="2.3" itemValue="2.3" />
+                    </p:selectOneMenu>
 
-                        <p:outputLabel value="Marca"/>
-                        <p:selectOneMenu value="#{veiculoBean.id_marca}">    
-                            <f:selectItems value="#{veiculoBean.marcas}"  var="marca" itemValue="#{marca.id}" itemLabel="#{marca.nome}"/>    
-                        </p:selectOneMenu>  
+                    <p:outputLabel value="Marca"/>
+                    <p:selectOneMenu value="#{veiculoBean.id_marca}">    
+                        <f:selectItems value="#{veiculoBean.marcas}"  var="marca" itemValue="#{marca.id}" itemLabel="#{marca.nome}"/>    
+                    </p:selectOneMenu>  
 
-                        <p:commandButton value="Enviar" action="#{veiculoBean.addVeiculo()}" icon="ui-icon-check" />
+                    <p:commandButton value="Enviar" action="#{veiculoBean.addVeiculo()}" icon="ui-icon-check" />
 
-                    </h:panelGrid>
-                </p:panel>
-            </h:form>
-        </div>
-
-    </h:body>
-</html>
-
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+ 
+    </ui:define>
+</ui:composition>

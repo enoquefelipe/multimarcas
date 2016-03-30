@@ -1,20 +1,12 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
-    <h:head>
-        <title>Cadastro de Endereço</title>
-        <link rel="StyleSheet" type="text/css" href="css/style.css" media="screen" />
-    </h:head>
-    <h:body>
-        <div id="topo">  
-            <ui:include src="menu.xhtml"/>  
-        </div> 
-        <div class="container-principal">
-            <h:form>
-                <p:panel header="Cadastro de Endereço">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/templates/layout.xhtml">
+    <ui:define name="content">
+
+            <h:form style="padding-top: 15px;">
+                <p:panel header="Cadastro de Endereço" >
                     <h:panelGrid columns="2">
 
                         <p:outputLabel value="CEP" for="cep"/>
@@ -25,25 +17,25 @@
 
                         <p:outputLabel value="Complemento" for="complemento"/>
                         <p:inputText id="complemento" size="30" value="#{enderecoBean.endereco.complemento}" />
-                        
-                           <p:outputLabel value="Bairro" for="bairro"/>
+
+                        <p:outputLabel value="Bairro" for="bairro"/>
                         <p:inputText id="bairro" size="30" value="#{enderecoBean.endereco.bairro}" />
 
                         <p:outputLabel value="UF" for="uf" />
                         <p:inputText id="uf" size="5" value="#{enderecoBean.endereco.estado}" />
- 
+
                         <p:outputLabel value="Cidade" for="cidade" />
                         <p:inputText id="cidade" size="30" value="#{enderecoBean.endereco.cidade}" />
-                     
+
                         <p:outputLabel value="Número" for="numero"/>
                         <p:inputText id="numero" size="5" value="#{enderecoBean.endereco.numero}" />
-                                                
+
                         <p:commandButton value="Enviar" action="#{enderecoBean.addEndereco()}"/>
 
                     </h:panelGrid>
                 </p:panel>
             </h:form>
-        </div>
-    </h:body>
-</html>
+
+    </ui:define>
+</ui:composition>
 

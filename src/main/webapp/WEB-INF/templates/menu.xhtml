@@ -5,21 +5,30 @@
     <nav class="aw-menu"  style="text-decoration: none;">
         <ul>
             <li class="is-toggled">
-                <h:link value="Home" outcome="index" />
+                <h:link outcome="index"><i class="fa fa-fw  fa-home"></i>Home</h:link>
             </li>
             <li>
-                <h:link value="Cadastra Pessoa" outcome="#{pessoaBean.preparaAddPessoa()}" />
+                <h:link outcome="#{pessoaBean.preparaAddPessoa()}" ><i class="fa fa-fw  fa-user"></i>Cadastrar Usuário</h:link>
             </li>
             <li>
-                <h:link value="Cadastra Endereço" outcome="#{enderecoBean.preparaAddEndereco()}"/>
+                <h:link outcome="#{enderecoBean.preparaAddEndereco()}"><i class="fa fa-fw fa-plus-circle"></i>Cadastrar Endereço</h:link>
             </li>
-            <li class="submenu"><a href="#">Cadastros</a>
+            <li>
+                <h:link outcome="#{marcaBean.preparaAddMarca()}"><i class="fa fa-fw fa-file"></i>Cadastrar Marca</h:link>
+            </li>
+            <li>
+                <h:link outcome="#{veiculoBean.preparaAddVeiculo()}"><i class="fa fa-fw fa-car"></i>Cadastrar Veiculo</h:link>
+            </li>
+            <li class="submenu"><a href="#"><i class="fa fa-fw fa-edit"></i>Gerenciar</a>
                 <ul>
-                    <li><a href="#">Pessoa</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-users"></i>Listar Usuários</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#">Sair</a>
+                <h:link><i class="fa  fa-fw  fa-cog"></i>Configurações</h:link>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-fw fa-sign-out"></i>Sair</a>
             </li>
         </ul>
     </nav>  

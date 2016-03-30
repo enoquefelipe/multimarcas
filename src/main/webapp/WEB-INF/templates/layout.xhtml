@@ -12,26 +12,27 @@
 
         <title>Multimarcas</title>
 
-        <h:outputStylesheet library="multimarcas" name="styles/custom.css" />
-        <h:outputStylesheet library="multimarcas" name="styles/layout.css" />
-        <h:outputStylesheet library="multimarcas" name="styles/components.css" />
+        <h:outputStylesheet library="multimarcas" name="css/custom.css" />
+        <h:outputStylesheet library="multimarcas" name="css/layout.css" />
+        <h:outputStylesheet library="multimarcas" name="css/components.css" />
 
-        <h:outputScript target="body" library="multimarcas" name="javascripts/jquery.js" />
-        <h:outputScript target="body" library="multimarcas" name="javascripts/app.js" />
+        <h:outputScript target="body" library="primefaces" name="jquery/jquery.js" />
+        <h:outputScript target="body" library="multimarcas" name="js/app.js" />
     </h:head>
 
     <h:body>
 
         <header class="aw-topbar">
-            <h:graphicImage library="multimarcas" name="images/eleal.png" />
-            <a href="#" class="aw-toggle  js-toggle"><i class="fa  fa-bars"></i></a>
+            <h:graphicImage library="multimarcas" name="img/eleal.png" />
+            
+            <a href="#" class="aw-toggle js-toggle"><i class="fa fa-bars"></i></a>
         </header>
 
-        <aside class="aw-sidebar  js-sidebar">
+        <aside class="aw-sidebar js-sidebar">
             <ui:include src="menu.xhtml" />
         </aside>
 
-        <section class="aw-content  js-content">
+        <section class="aw-content js-content">
             <ui:insert name="content" />
         </section>
 

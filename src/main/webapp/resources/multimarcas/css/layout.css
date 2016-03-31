@@ -64,13 +64,19 @@
 
 nav ul li ul{
     display: none;
+    text-decoration: none;
 }
 
 nav ul li:hover ul{
     display: block;
+    text-decoration: none;
 }
 
 li{
+    text-decoration: none;
+}
+
+ul{
     text-decoration: none;
 }
 

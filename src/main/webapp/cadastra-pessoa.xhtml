@@ -65,10 +65,6 @@
 
                     <p:outputLabel for="numero" value="Número" />   
                     <p:inputText id="numero" value="#{pessoaBean.pessoa.endereco.numero}" style="width:40px"/>  
-
-                    <p:commandButton value="CEP" icon="ui-icon-search">
-                        <f:ajax listener="#{pessoaBean.pessoa.endereco.encontraCEP()}" execute="form-cadastro:cep" render="form-cadastro:cidade logradouro bairro uf" event="click"/>
-                    </p:commandButton>
                 </h:panelGrid>  
 
             </p:panel>
@@ -93,7 +89,7 @@
                     <p:outputLabel for="site" value="Site" />   
                     <p:inputMask id="site" value="#{pessoaBean.pessoa.contato.site}" mask="" /> 
 
-                    <p:commandButton value="Enviar" action="#{pessoaBean.addPessoa()}" icon="ui-icon-check" validateClient="true" ajax="false"/>
+                    <p:commandButton value="Enviar" action="#{pessoaBean.addPessoa()}" icon="ui-icon-check" />
                 </h:panelGrid>
             </p:panel>
 

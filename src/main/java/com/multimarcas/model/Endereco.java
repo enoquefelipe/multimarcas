@@ -15,7 +15,7 @@ public class Endereco implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String cep = null;
+    private String cep;// = null;
     private String logradouro, bairro, cidade, estado, numero, complemento;
 
     public Endereco() {

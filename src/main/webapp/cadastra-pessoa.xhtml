@@ -6,11 +6,10 @@
                 template="/WEB-INF/templates/layout.xhtml">
 
     <ui:define name="content">
-        
-        <h:form id="form-cadastro-pessoa">
-         <!--   <h:outputScript name="jsf.js" library="javax.faces" target="head"/> -->
 
-            <p:panel header="Dados Pessoais" id="titulo-cadastro">
+        <h:form id="cadastro-pessoa" style="padding-top: 10px;">
+            <p:messages id="msgs" autoUpdate="true"/>
+            <p:panel header="Dados Pessoais" id="titulo-cadastro" >
                 <h:panelGrid columns="4">
 
                     <p:outputLabel value="Nome" for="nome"/>
@@ -49,22 +48,22 @@
             <p:panel header="Dados de Endereço" style="margin-top:10px;">  
                 <h:panelGrid columns="2"> 
                     <p:outputLabel value="CEP:" for="cep"/>
-                    <p:inputMask id="cep" mask="99999-999" style="width:70px" value="#{pessoaBean.pessoa.endereco.cep}"/>
+                    <p:inputMask id="cep" mask="99999-999" style="width:70px" value="#{pessoaBean.endereco.cep}"/>
 
                     <p:outputLabel for="logradouro" value="Logradouro" />   
-                    <p:inputText id="logradouro" value="#{pessoaBean.pessoa.endereco.logradouro}"/>  
+                    <p:inputText id="logradouro" value="#{pessoaBean.endereco.logradouro}"/>  
 
                     <p:outputLabel for="bairro" value="Bairro" />   
-                    <p:inputText id="bairro" value="#{pessoaBean.pessoa.endereco.bairro}" />  
+                    <p:inputText id="bairro" value="#{pessoaBean.endereco.bairro}" />  
 
                     <p:outputLabel for="uf" value="UF"  />   
-                    <p:inputMask id="uf" style="width:50px" mask="a*" value="#{pessoaBean.pessoa.endereco.estado}" />  
+                    <p:inputMask id="uf" style="width:50px" mask="a*" value="#{pessoaBean.endereco.estado}" />  
 
                     <p:outputLabel for="cidade" value="Cidade" />   
-                    <p:inputText id="cidade" value="#{pessoaBean.pessoa.endereco.cidade}"  />  
+                    <p:inputText id="cidade" value="#{pessoaBean.endereco.cidade}"  />  
 
                     <p:outputLabel for="numero" value="Número" />   
-                    <p:inputText id="numero" value="#{pessoaBean.pessoa.endereco.numero}" style="width:40px"/>  
+                    <p:inputText id="numero" value="#{pessoaBean.endereco.numero}" style="width:40px"/>  
                 </h:panelGrid>  
 
             </p:panel>
@@ -72,27 +71,28 @@
             <p:panel header="Dados de Contato"  style="margin-top: 10px;">  
                 <h:panelGrid columns="2"> 
                     <p:outputLabel for="residencial" value="Telefone" />   
-                    <p:inputMask id="residencial" value="#{pessoaBean.pessoa.contato.residencial}" mask="(99)9999-9999" style="width:100px"/>  
+                    <p:inputMask id="residencial" value="#{pessoaBean.contato.residencial}" mask="(99)9999-9999" style="width:100px"/>  
 
                     <p:outputLabel for="comercial" value="Comercial" />   
-                    <p:inputMask id="comercial" value="#{pessoaBean.pessoa.contato.comercial}" mask="(99)9999-9999" style="width:100px"/>  
+                    <p:inputMask id="comercial" value="#{pessoaBean.contato.comercial}" mask="(99)9999-9999" style="width:100px"/>  
 
                     <p:outputLabel for="movel" value="Celular" />   
-                    <p:inputMask id="movel" value="#{pessoaBean.pessoa.contato.movel}" mask="(99)99999-9999" style="width:100px"/>  
+                    <p:inputMask id="movel" value="#{pessoaBean.contato.movel}" mask="(99)99999-9999" style="width:100px"/>  
 
                     <p:outputLabel for="fax" value="Fax" />   
-                    <p:inputMask id="fax" value="#{pessoaBean.pessoa.contato.movel}" mask="(99)9999-9999" style="width:100px"/>  
+                    <p:inputMask id="fax" value="#{pessoaBean.contato.movel}" mask="(99)9999-9999" style="width:100px"/>  
 
                     <p:outputLabel for="email" value="E-mail" />   
-                    <p:inputMask id="email" value="#{pessoaBean.pessoa.contato.email}" mask="" /> 
+                    <p:inputMask id="email" value="#{pessoaBean.contato.email}" mask="" /> 
 
                     <p:outputLabel for="site" value="Site" />   
-                    <p:inputMask id="site" value="#{pessoaBean.pessoa.contato.site}" mask="" /> 
+                    <p:inputMask id="site" value="#{pessoaBean.contato.site}" mask="" /> 
 
-                    <p:commandButton value="Enviar" action="#{pessoaBean.addPessoa()}" icon="ui-icon-check" />
                 </h:panelGrid>
             </p:panel>
-
+            <div style="text-align: center; margin-top: 10px;">
+                <p:commandButton value="Enviar" action="#{pessoaBean.addPessoa()}" icon="ui-icon-check"/>
+            </div>
         </h:form>   
 
     </ui:define>

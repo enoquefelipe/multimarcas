@@ -8,8 +8,10 @@ import com.multimarcas.model.Pessoa;
 //import java.text.SimpleDateFormat;
 //import java.util.Date;
 import java.util.List;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
@@ -26,6 +28,8 @@ public class PessoaBean {
 
     public String preparaAddPessoa() {
         pessoa = new Pessoa();
+        endereco = new Endereco();
+        contato = new Contato();
         return "addPessoa";
     }
 
@@ -38,8 +42,12 @@ public class PessoaBean {
 //      DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 //      dt = (Date) (java.util.Date) formatter.parse(data);
 //      pessoa.setData_nasc(dt);
-        PessoaDao pessoaDAO = new PessoaDao();
-        pessoaDAO.save(pessoa);
+        PessoaDao dao = new PessoaDao();
+        pessoa.setContato(contato);
+        pessoa.setEndereco(endereco);
+        dao.save(pessoa);
+        FacesMessage msg = new FacesMessage("Registro salvo com sucesso!");
+        FacesContext.getCurrentInstance().addMessage(null, msg);
         return "listaPessoas";
     }
 
@@ -49,11 +57,13 @@ public class PessoaBean {
         return listaPessoas;
     }
 
-    public String excluirPessoa() {
+    public void excluirPessoa() {
         Pessoa pessoaTemp = (Pessoa) (listaPessoas.getRowData());
         PessoaDao dao = new PessoaDao();
         dao.remove(pessoaTemp);
-        return "index";
+        FacesMessage msg = new FacesMessage("Registro removido com sucesso!");
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+        listarPessoas();
     }
 
     public String alterarPessoa() {
@@ -76,7 +86,7 @@ public class PessoaBean {
 
     public Contato getContato() {
         return contato;
-    }   
+    }
 
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
@@ -89,10 +99,10 @@ public class PessoaBean {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-    
+
     public void setContato(Contato contato) {
         this.contato = contato;
-    }    
+    }
 
 //    public String getData() {
 //        return data;
@@ -101,5 +111,4 @@ public class PessoaBean {
 //    public void setData(String data) {
 //        this.data = data;
 //    }
-
 }

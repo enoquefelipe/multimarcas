@@ -6,8 +6,8 @@
                 template="/WEB-INF/templates/layout.xhtml">
 
     <ui:define name="content">
-
-        <h:form style="padding-top: 15px;">
+        <p:messages id="msgs" autoUpdate="true" style="padding-top: 10px;"/>
+        <h:form style="padding-top: 10px;">
             <p:toolbar id="toolbar">
                 <f:facet name="left">
                     <p:commandButton value="Novo Item" icon="ui-icon-document" action="#{pessoaBean.preparaAddPessoa()}">
@@ -51,12 +51,12 @@
                 <h:form>           
                     <p:growl id="message" showDetail="true" />
 
-                    <p:commandButton update="message" action="#{pessoaBean.excluirPessoa()}" icon="ui-icon-close">
+                    <p:commandButton update="pessoas" action="#{pessoaBean.excluirPessoa()}" icon="ui-icon-close">
                         <p:confirm header="Atenção" message="Deseja realmente Excluir?" icon="ui-icon-alert" />
                     </p:commandButton>
 
                     <p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
-                        <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+                        <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
                         <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
                     </p:confirmDialog>
                 </h:form>

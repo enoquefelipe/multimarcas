@@ -26,19 +26,7 @@ public class PessoaBean {
 //    private String data;
 //    private Date dt;
 
-    public String preparaAddPessoa() {
-        pessoa = new Pessoa();
-        endereco = new Endereco();
-        contato = new Contato();
-        return "addPessoa";
-    }
-
-    public String prepararAlterarPessoa() {
-        pessoa = (Pessoa) (listaPessoas.getRowData());
-        return "updatePessoa";
-    }
-
-    public String addPessoa() throws Exception {
+    public String cadastrarPessoa() throws Exception {
 //      DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 //      dt = (Date) (java.util.Date) formatter.parse(data);
 //      pessoa.setData_nasc(dt);
@@ -57,6 +45,18 @@ public class PessoaBean {
         return listaPessoas;
     }
 
+    public String preparaCadastrarPessoa() {
+        pessoa = new Pessoa();
+        endereco = new Endereco();
+        contato = new Contato();
+        return "addPessoa";
+    }
+
+    public String preparaEditarPessoa() {
+//        pessoa = (Pessoa) (listaPessoas.getRowData());
+        return "editarPessoa";
+    }
+
     public void excluirPessoa() {
         Pessoa pessoaTemp = (Pessoa) (listaPessoas.getRowData());
         PessoaDao dao = new PessoaDao();
@@ -66,7 +66,7 @@ public class PessoaBean {
         listarPessoas();
     }
 
-    public String alterarPessoa() {
+    public String atualizarPessoa() {
         PessoaDao dao = new PessoaDao();
         dao.update(pessoa);
         return "index";

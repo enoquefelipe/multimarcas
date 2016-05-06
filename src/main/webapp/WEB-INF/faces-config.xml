@@ -19,23 +19,18 @@
         </navigation-case>
         
         <navigation-case>
-            <from-outcome>updatePessoa</from-outcome> 
-            <to-view-id>/altera-pessoa.xhtml</to-view-id> 
+            <from-outcome>editarPessoa</from-outcome> 
+            <to-view-id>/editar-pessoa.xhtml</to-view-id> 
         </navigation-case>
       
         <navigation-case>
             <from-outcome>listaPessoas</from-outcome> 
-            <to-view-id>/lista-pessoas.xhtml</to-view-id> 
+            <to-view-id>/gstao-pessoas.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
             <from-outcome>addMarca</from-outcome> 
             <to-view-id>/cadastra-marca.xhtml</to-view-id> 
-        </navigation-case>
-        
-        <navigation-case>
-            <from-outcome>teste</from-outcome> 
-            <to-view-id>/teste-mensagem.xhtml</to-view-id> 
         </navigation-case>
     
         <navigation-case>

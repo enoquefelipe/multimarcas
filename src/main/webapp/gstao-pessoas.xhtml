@@ -10,7 +10,7 @@
         <h:form style="padding-top: 10px;">
             <p:toolbar id="toolbar">
                 <f:facet name="left">
-                    <p:commandButton value="Novo Item" icon="ui-icon-document" action="#{pessoaBean.preparaAddPessoa()}">
+                    <p:commandButton value="Novo Item" icon="ui-icon-document" action="#{pessoaBean.preparaCadastrarPessoa()}">
                     </p:commandButton>
                 </f:facet>
             </p:toolbar>
@@ -41,9 +41,8 @@
             </p:column>
 
             <p:column headerText="Editar" style="text-align: center; width:55px">        
-
                 <h:form>
-                    <p:commandButton action="#{pessoaBean.prepararAlterarPessoa()}" icon="ui-icon-pencil" />
+                    <p:commandButton action="#{pessoaBean.preparaEditarPessoa()}" icon="ui-icon-pencil" />
                 </h:form>  
             </p:column>
 

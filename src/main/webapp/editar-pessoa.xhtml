@@ -4,13 +4,16 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
                 template="/WEB-INF/templates/layout.xhtml">
-    
-    <ui:define name="content">
-        
-        <h:form style="padding-top: 15px;">
 
-            <p:panel header="Alterar Dados">
-                <h:panelGrid columns="2" >
+    <ui:define name="content">
+
+        <p:panel header="Alterar Dados">
+            <h:panelGrid columns="2" >
+                
+                <h:form style="padding-top: 15px;">
+                    
+                    <h:outputLabel for="id"/>
+                    <h:inputHidden value="#{pessoaBean.pessoa.id_pessoa}" id="id"/>
 
                     <p:outputLabel value="Nome:" for="nome" />
                     <p:inputText value="#{pessoaBean.pessoa.nome}" id="nome"/>
@@ -22,17 +25,15 @@
                     <p:inputMask value="#{pessoaBean.pessoa.cpf}" id="cpf" mask="999.999.999-99"/>
 
                     <p:outputLabel value="Sexo:" for="sex" />
-                    <h:selectOneMenu id="sex" value="#{pessoaBean.pessoa.sexo}" style="width:130px;">
-                        <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
-                        <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
-                    </h:selectOneMenu>
+                    <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+                    <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+                    </p:selectOneMenu>
 
-                    <p:commandButton action="#{pessoaBean.alterarPessoa()}" value="Salvar" icon="ui-icon-check" />
+                    <p:commandButton action="#{pessoaBean.atualizarPessoa()}" value="Salvar" icon="ui-icon-check" />
+                </h:form>
+                
+            </h:panelGrid>
+        </p:panel>
 
-                </h:panelGrid>
-            </p:panel>
-
-        </h:form>
-        
     </ui:define>
 </ui:composition>

@@ -23,8 +23,8 @@ public class PessoaBean {
     private Endereco endereco;
     private Contato contato;
     private DataModel listaPessoas;
-//    private String data;
-//    private Date dt;
+//  private String data;
+//  private Date dt;
 
     public String cadastrarPessoa() throws Exception {
 //      DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
@@ -53,8 +53,9 @@ public class PessoaBean {
     }
 
     public String preparaEditarPessoa() {
-//        pessoa = (Pessoa) (listaPessoas.getRowData());
-        return "editarPessoa";
+        pessoa = (Pessoa) (listaPessoas.getRowData());
+        System.out.println(pessoa.getNome());
+        return "editar-pessoa";
     }
 
     public void excluirPessoa() {

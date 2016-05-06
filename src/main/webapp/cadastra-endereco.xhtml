@@ -5,36 +5,38 @@
                 template="/WEB-INF/templates/layout.xhtml">
     <ui:define name="content">
 
-            <h:form style="padding-top: 15px;">
+        <h:form style="padding-top: 15px;">
+            <div class="ui-fluid">
                 <p:panel header="Cadastro de Endereço" >
-                    <h:panelGrid columns="2">
+                    <p:panelGrid columns="4" layout="grid" styleClass="panelgrid-noborder" columnClasses="ui-grid-col-2, ui-grid-col-4, ui-grid-col-2, ui-grid-col-4">
 
-                        <p:outputLabel value="CEP" for="cep"/>
-                        <p:inputMask id="cep" size="10" mask="99999-999" value="#{enderecoBean.endereco.cep}" />
+                        <p:outputLabel for="logradouro" value="Logradouro" />   
+                        <p:inputText id="logradouro" value="#{pessoaBean.endereco.logradouro}"/>  
 
-                        <p:outputLabel value="Logradouro" for="logradouro"/>
-                        <p:inputText id="logradouro" size="30" value="#{enderecoBean.endereco.logradouro}"/>
+                        <p:outputLabel for="numero" value="Número" />   
+                        <p:inputText id="numero" value="#{pessoaBean.endereco.numero}" style="width:60px"/>  
 
-                        <p:outputLabel value="Complemento" for="complemento"/>
-                        <p:inputText id="complemento" size="30" value="#{enderecoBean.endereco.complemento}" />
+                        <p:outputLabel for="bairro" value="Bairro" />   
+                        <p:inputText id="bairro" value="#{pessoaBean.endereco.bairro}" />  
 
-                        <p:outputLabel value="Bairro" for="bairro"/>
-                        <p:inputText id="bairro" size="30" value="#{enderecoBean.endereco.bairro}" />
+                        <p:outputLabel for="cep" value="CEP"/>
+                        <p:inputMask id="cep" mask="99999-999" style="width:120px" value="#{pessoaBean.endereco.cep}"/>
 
-                        <p:outputLabel value="UF" for="uf" />
-                        <p:inputText id="uf" size="5" value="#{enderecoBean.endereco.estado}" />
+                        <p:outputLabel for="uf" value="UF"  />   
+                        <p:inputMask id="uf" style="width:60px" mask="a*" value="#{pessoaBean.endereco.estado}" />  
 
-                        <p:outputLabel value="Cidade" for="cidade" />
-                        <p:inputText id="cidade" size="30" value="#{enderecoBean.endereco.cidade}" />
+                        <p:outputLabel for="cidade" value="Cidade" />   
+                        <p:inputText id="cidade" value="#{pessoaBean.endereco.cidade}"  style="width:160px"/>  
 
-                        <p:outputLabel value="Número" for="numero"/>
-                        <p:inputText id="numero" size="5" value="#{enderecoBean.endereco.numero}" />
 
-                        <p:commandButton value="Enviar" action="#{enderecoBean.addEndereco()}"/>
-
-                    </h:panelGrid>
+                    </p:panelGrid>
                 </p:panel>
-            </h:form>
+            </div>
+            <div style="text-align: center; margin-top: 10px;">
+                <p:commandButton value="Enviar" action="#{enderecoBean.addEndereco()}"/>
+            </div>
+
+        </h:form>
 
     </ui:define>
 </ui:composition>

@@ -6,13 +6,18 @@
     <ui:define name="content">
 
         <h:form style="padding-top: 15px;">
-            <p:panel header="Cadastro de Marca" style="text-align: center;">
-                <h:panelGrid columns="2">
-                    <p:outputLabel value="Marca >>" for="marca"/>
-                    <p:inputText id="marca" value="#{marcaBean.marca.nome}"/>
-                    <p:commandButton value="Enviar" action="#{marcaBean.addMarca()}" icon="ui-icon-check"/>
-                </h:panelGrid>
-            </p:panel>
+            <div class="ui-fluid">
+                <p:panel header="Cadastro de Marca" style="text-align: center;">
+                    <p:panelGrid columns="4" layout="grid" styleClass="panelgrid-noborder" columnClasses="ui-grid-col-2, ui-grid-col-4, ui-grid-col-2, ui-grid-col-4">
+                        <p:outputLabel value="Marca" for="marca"/>
+                        <p:inputText id="marca" value="#{marcaBean.marca.nome}"/>
+                    </p:panelGrid>
+                </p:panel>
+            </div>
+            
+            <div style="text-align: center; margin-top: 10px;">
+                <p:commandButton value="Enviar" action="#{marcaBean.addMarca()}" icon="ui-icon-check"/>
+            </div>
         </h:form>
 
     </ui:define>

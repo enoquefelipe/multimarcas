@@ -5,4 +5,4 @@ INSERT INTO tab_contato (id, comercial, email, fax, movel, obs, residencial, sit
 INSERT INTO tab_contato (id, comercial, email, fax, movel, obs, residencial, site) VALUES (2,'11 5900-0000','casa@casa.com','11 5999-0000','11 99999-0000','Horário comercial','11 5999-0000','www.a.com');
 
 INSERT INTO tab_pessoa (id_pessoa, cpf, data_nasc, nome, rg, sexo, contato_id, endereco_id) VALUES (1, '610.568.181-07', '1990-02-02', 'Daniel Santos', '48.303.999-5', 'Masculino', 1, 1);
-INSERT INTO tab_pessoa (id_pessoa, cpf, data_nasc, nome, rg, sexo, contato_id, endereco_id) VALUES (2, '557.736.336-55', '1992-03-02', 'João Fernando', '40.300.900-5', 'Masculino', 2, 2);
+INSERT INTO tab_pessoa (id_pessoa, cpf, data_nasc, nome, rg, sexo, contato_id, endereco_id) VALUES (2, '557.736.336-55', '1992-03-02', 'Ricardo Fernando', '40.300.900-5', 'Masculino', 2, 2);

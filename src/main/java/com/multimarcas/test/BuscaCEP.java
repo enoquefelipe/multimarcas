@@ -14,7 +14,7 @@ public class BuscaCEP {
     public static void main(String[] args) throws ParseException {
 
         Date data = new Date();//Instanciando data da classe Date()
-      
+
 //        data.getDate();
 //        data.getTime();//Informando a data atual do computador
 //        SimpleDateFormat formatarDate = new SimpleDateFormat("dd/MM/yyyy");//formatando a data atual do computador
@@ -28,10 +28,10 @@ public class BuscaCEP {
         DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         data = (Date) (java.util.Date) formatter.parse(datinha);
         System.out.print("Data porra: " + datinha + "\n \n");
-          
+
 //----------------------------------------------------------------------------------------------------------------------------
 // TESTE do buscador de CEP        
-//        CepWebService web = new CepWebService("04865-060");
+//        CepWebService web = new CepWebService("04872-150");
 //
 //        System.out.println(web.getCidade());
 //        System.out.println(web.getEstado());

@@ -27,6 +27,7 @@ public class ServiceBean implements Serializable {
             setEstado(cepWebService.getEstado());
             setCidade(cepWebService.getCidade());
             setBairro(cepWebService.getBairro());
+            System.out.println(getLogradouro());
         } else {
             FacesContext.getCurrentInstance().addMessage( null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Servidor não está respondendo", "Servidor não está respondendo"));
         }

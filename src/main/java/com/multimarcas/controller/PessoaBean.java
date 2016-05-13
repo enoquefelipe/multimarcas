@@ -4,6 +4,7 @@ import com.multimarcas.dao.PessoaDao;
 import com.multimarcas.model.Contato;
 import com.multimarcas.model.Endereco;
 import com.multimarcas.model.Pessoa;
+import com.multimarcas.service.CepWebService;
 //import java.text.DateFormat;
 //import java.text.SimpleDateFormat;
 //import java.util.Date;
@@ -70,7 +71,19 @@ public class PessoaBean {
     public String atualizarPessoa() {
         PessoaDao dao = new PessoaDao();
         dao.update(pessoa);
-        return "index";
+        FacesMessage msg = new FacesMessage("Registro atualizado com sucesso!");
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+        listarPessoas();
+        return "gestao-pessoas";
+    }
+
+    public void buscaCEP() {
+        CepWebService web = new CepWebService(endereco.getCep());
+        endereco.setCidade(web.getCidade());
+        endereco.setEstado(web.getEstado());
+        endereco.setBairro(web.getBairro());
+        endereco.setLogradouro(web.getLogradouro());
+        System.out.println(endereco.getLogradouro());
     }
 
     public Pessoa getPessoa() {

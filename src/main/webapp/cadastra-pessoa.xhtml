@@ -46,7 +46,7 @@
                         <p:inputMask id="cep" value="#{pessoaBean.endereco.cep}" mask="99999-999" style="width:100px" rendered="true"/>
 
                         <h:outputLabel/>
-                        <h:commandButton value="Bescar CEP" action="#{pessoaBean.buscaCEP()}" >
+                        <h:commandButton value="Buscar CEP" action="#{pessoaBean.buscaCEP()}" >
                             <f:ajax execute="cep" render="logradouro bairro uf cidade" />
                         </h:commandButton>
 
@@ -94,6 +94,7 @@
                     </p:panelGrid>
                 </p:panel>
             </div>
+            
             <div style="text-align: center; margin-top: 10px;">
                 <p:commandButton value="Enviar" action="#{pessoaBean.cadastrarPessoa()}" icon="ui-icon-check"/>
             </div>

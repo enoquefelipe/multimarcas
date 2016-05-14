@@ -55,8 +55,10 @@ public class PessoaBean {
 
     public String preparaEditarPessoa() {
         pessoa = (Pessoa) (listaPessoas.getRowData());
-        System.out.println(pessoa.getNome());
-        return "editar-pessoa";
+        endereco = pessoa.getEndereco();
+        contato = pessoa.getContato();
+//        return "editar-pessoa";
+        return "errada";
     }
 
     public void excluirPessoa() {
@@ -70,6 +72,8 @@ public class PessoaBean {
 
     public String atualizarPessoa() {
         PessoaDao dao = new PessoaDao();
+        pessoa.setEndereco(endereco);
+        pessoa.setContato(contato);
         dao.update(pessoa);
         FacesMessage msg = new FacesMessage("Registro atualizado com sucesso!");
         FacesContext.getCurrentInstance().addMessage(null, msg);

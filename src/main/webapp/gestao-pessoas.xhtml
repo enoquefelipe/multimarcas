@@ -7,6 +7,7 @@
 
     <ui:define name="content">
         <p:messages id="msgs" autoUpdate="true" style="padding-top: 10px;"/>
+
         <h:form style="padding-top: 10px;">
             <p:toolbar id="toolbar">
                 <f:facet name="left">
@@ -15,11 +16,10 @@
                 </f:facet>
             </p:toolbar>
         </h:form>
+
         <p:dataTable id="pessoas" var="pessoa" value="#{pessoaBean.listarPessoas()}" paginator="true" rows="10" emptyMessage="Nenhum item cadastrado." paginatorPosition="bottom" style="padding-top: 10px;">
 
-            <f:facet name="header">
-                Gerencia Pessoas
-            </f:facet>
+            <f:facet name="header">Gerencia Pessoas</f:facet>
 
             <p:column headerText="ID" style="width:50px; text-align: center;">
                 <h:outputText value="#{pessoa.id_pessoa}" />
@@ -42,7 +42,8 @@
 
             <p:column headerText="Editar" style="text-align: center; width:55px">        
                 <h:form>
-                    <p:commandButton action="#{pessoaBean.preparaEditarPessoa()}" icon="ui-icon-pencil" />
+                    <p:commandButton action="#{pessoaBean.preparaEditarPessoa()}" icon="ui-icon-pencil" >
+                    </p:commandButton>
                 </h:form>  
             </p:column>
 

@@ -1,48 +1,29 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:h="http://java.sun.com/jsf/html">
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head/>
+    <h:body>
 
-    <nav class="aw-menu"  style="text-decoration: none;">
-        <ul>
-            <li class="is-toggled">
-                <h:link outcome="index"><i class="fa fa-home"></i>Home</h:link>
-            </li>
-            <li>
-                <h:link outcome="#{pessoaBean.preparaCadastrarPessoa()}" ><i class="fa fa-user"></i>Cadastrar Usuário</h:link>
-            </li>
-            <li>
-                <h:link outcome="#{enderecoBean.preparaAddEndereco()}"><i class="fa fa-plus-circle"></i>Cadastrar Endereço</h:link>
-            </li>
-            <li>
-                <h:link outcome="#{marcaBean.preparaAddMarca()}"><i class="fa fa-file"></i>Cadastrar Marca</h:link>
-            </li>
-            <li>
-                <h:link outcome="#{veiculoBean.preparaAddVeiculo()}"><i class="fa fa-car"></i>Cadastrar Veiculo</h:link>
-            </li>
-            <li class="submenu"><a href="#"><i class="fa fa-edit"></i>Gerenciar</a>
-                <ul>
-                    <li> 
-                        <h:link outcome="listaPessoas"><i class="fa fa-users"></i>Usuários</h:link>
-                    </li>
-                </ul>
-                <ul>
-                    <li><a href="#"><i class="fa fa-car"></i>Carros</a></li>
-                </ul>
-                <ul>
-                    <li><a href="#"><i class="fa fa-file"></i>Marcas</a></li>
-                </ul>
-                <ul>
-                    <li><a href="#"><i class="fa fa-home"></i>Endereços</a></li>
-                </ul>
-            </li>
+        <h:form id="menu-principal">
+            <p:menu style="width:100%; border: none; background-color: transparent;" toggleable="true">
+                <p:menuitem value="Home" action="index" icon="fa fa-home"/>
+                <p:menuitem value="Cadastrar Usuário" action="#{pessoaBean.preparaCadastrarPessoa()}" icon="fa fa-user-plus"/>
+                <p:menuitem value="Cadastrar Endereço" action="#{enderecoBean.preparaAddEndereco()}" icon="fa fa-location-arrow"/>
+                <p:menuitem value="Cadastrar Marca" action="#{marcaBean.preparaAddMarca()}" icon="fa fa-file"/>
+                <p:menuitem value="Cadastrar Veículo" action="#{veiculoBean.preparaAddVeiculo()}" icon="fa fa-car"/>
 
-            <li>
-                <h:link><i class="fa fa-cog"></i>Configurações</h:link>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-sign-out"></i>Sair</a>
-            </li>
-        </ul>
-    </nav>  
+                <p:submenu label="Gerenciar">
+                    <p:menuitem value="Usuários" action="listaPessoas" icon="fa fa-users"/>
+                    <p:menuitem value="Véiculos" icon="fa fa-car"/>
+                    <p:menuitem value="Marcas" icon="fa fa-files-o"/>
+                    <p:menuitem value="Endereços" icon="fa fa-building"/>
+                    <p:separator/>
+                    <p:menuitem value="Sair" icon="fa fa-sign-out"/>
+                </p:submenu>
+            </p:menu>
+        </h:form>
 
-</ui:composition>
+    </h:body>
+</html>

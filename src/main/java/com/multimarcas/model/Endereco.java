@@ -9,6 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ *
+ * @author Enoque Felipe
+ */
 @Entity(name = "tab_endereco")
 public class Endereco implements Serializable {
 
@@ -31,8 +35,8 @@ public class Endereco implements Serializable {
         this.numero = numero;
         this.complemento = complemento;
     }
-    
-        public void encontraCEP() {
+
+    public void encontraCEP() {
         CepWebService cepWebService = new CepWebService(getCep());
 
         if (cepWebService.getResultado() == 1) {

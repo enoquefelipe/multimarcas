@@ -9,6 +9,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
 
+/**
+ * 
+ * @author Enoque Felipe
+ */
 @ManagedBean
 @SessionScoped
 public class VeiculoBean {

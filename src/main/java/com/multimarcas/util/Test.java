@@ -7,9 +7,12 @@ import com.multimarcas.model.Pessoa;
 import com.multimarcas.model.Veiculo;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.cfg.AnnotationConfiguration;
 
+/**
+ * 
+ * @author Enoque Felipe
+ */
 public class Test {
 
     static Pessoa pessoa;

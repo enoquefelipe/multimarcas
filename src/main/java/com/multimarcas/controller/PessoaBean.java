@@ -16,6 +16,11 @@ import javax.faces.context.FacesContext;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
+/**
+ * 
+ * @author Enoque Felipe
+ */
+
 @ManagedBean
 @SessionScoped
 public class PessoaBean {
@@ -58,7 +63,7 @@ public class PessoaBean {
         endereco = pessoa.getEndereco();
         contato = pessoa.getContato();
 //        return "editar-pessoa";
-        return "errada";
+        return "errada?faces-redirect=true";
     }
 
     public void excluirPessoa() {
@@ -78,7 +83,7 @@ public class PessoaBean {
         FacesMessage msg = new FacesMessage("Registro atualizado com sucesso!");
         FacesContext.getCurrentInstance().addMessage(null, msg);
         listarPessoas();
-        return "gestao-pessoas";
+        return "gestao-pessoas?faces-redirect=true";
     }
 
     public void buscaCEP() {

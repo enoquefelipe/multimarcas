@@ -6,6 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * 
+ * @author Enoque Felipe
+ */
 @Entity(name = "tab_concessionaria")
 public class Concessionaria implements Serializable {
 

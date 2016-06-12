@@ -6,6 +6,10 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+/**
+ * 
+ * @author Enoque Felipe
+ */
 public class VeiculoDao {
 
     public void save(Veiculo veiculo) {

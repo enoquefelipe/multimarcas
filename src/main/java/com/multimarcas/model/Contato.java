@@ -1,4 +1,3 @@
-
 package com.multimarcas.model;
 
 import java.io.Serializable;
@@ -7,13 +6,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ *
+ * @author Enoque Felipe
+ */
 @Entity(name = "tab_contato")
 public class Contato implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String email,site,residencial,movel,comercial,fax,obs;
+    private String email, site, residencial, movel, comercial, fax, obs;
 
     public Long getId() {
         return id;

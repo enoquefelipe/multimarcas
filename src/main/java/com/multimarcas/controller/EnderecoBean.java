@@ -6,6 +6,10 @@ import com.multimarcas.service.CepWebService;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+/**
+ * 
+ * @author Enoque Felipe
+ */
 @ManagedBean
 @SessionScoped
 public class EnderecoBean {

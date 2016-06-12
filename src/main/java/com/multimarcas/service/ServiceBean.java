@@ -6,6 +6,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+/**
+ * 
+ * @author Enoque Felipe
+ */
 @ManagedBean(name = "mbService")
 @SessionScoped
 public class ServiceBean implements Serializable {

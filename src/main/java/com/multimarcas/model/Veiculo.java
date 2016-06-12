@@ -8,6 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+/**
+ * 
+ * @author Enoque Felipe
+ */
 @Entity(name = "tab_veiculo")
 public class Veiculo implements Serializable {
 

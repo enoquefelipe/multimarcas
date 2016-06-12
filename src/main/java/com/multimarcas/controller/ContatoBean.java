@@ -4,6 +4,10 @@ package com.multimarcas.controller;
 import com.multimarcas.model.Contato;
 import javax.faces.bean.ManagedBean;
 
+/**
+ * 
+ * @author Enoque Felipe
+ */
 @ManagedBean
 public class ContatoBean {
     

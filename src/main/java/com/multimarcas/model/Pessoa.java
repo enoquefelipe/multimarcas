@@ -9,6 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 
+/**
+ * 
+ * @author Enoque Felipe
+ */
 @Entity(name = "tab_pessoa")
 public class Pessoa implements Serializable {
 //  @Temporal(TemporalType.DATE)

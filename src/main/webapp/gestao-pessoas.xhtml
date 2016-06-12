@@ -17,7 +17,7 @@
             </p:toolbar>
         </h:form>
 
-        <p:dataTable id="pessoas" var="pessoa" value="#{pessoaBean.listarPessoas()}" paginator="true" rows="10" emptyMessage="Nenhum item cadastrado." paginatorPosition="bottom" style="padding-top: 10px;">
+        <p:dataTable id="pessoas" var="pessoa" value="#{pessoaBean.listarPessoas()}" paginator="true" rows="10" reflow="true" emptyMessage="Nenhum item cadastrado." paginatorPosition="bottom" style="padding-top: 10px;">
 
             <f:facet name="header">Gerencia Pessoas</f:facet>
 

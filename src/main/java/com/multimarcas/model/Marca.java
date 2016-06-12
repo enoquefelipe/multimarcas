@@ -10,6 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+/**
+ * 
+ * @author Enoque Felipe
+ */
 @Entity(name = "tab_marca")
 public class Marca implements Serializable {
 

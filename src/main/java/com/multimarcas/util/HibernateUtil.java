@@ -9,6 +9,10 @@ import com.multimarcas.model.Veiculo;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
+/**
+ * 
+ * @author Enoque Felipe
+ */
 public class HibernateUtil {
 
     private static SessionFactory sessionFactory;

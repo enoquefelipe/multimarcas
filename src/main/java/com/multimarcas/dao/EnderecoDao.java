@@ -5,6 +5,10 @@ import com.multimarcas.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+/**
+ * 
+ * @author Enoque Felipe
+ */
 public class EnderecoDao {
 
     public void save(Endereco endereco) {

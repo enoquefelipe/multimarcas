@@ -13,6 +13,8 @@ import com.multimarcas.util.HibernateUtil;
  * @author Enoque Felipe
  */
 public class PessoaDao {
+	
+	private List<Pessoa> lista;
 
     public void save(Pessoa pessoa) {
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -29,7 +31,7 @@ public class PessoaDao {
     public List<Pessoa> list() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
-        List lista = session.createQuery("from tab_pessoa").list();
+        lista = (List<Pessoa>) session.createQuery("from tab_pessoa").list();
         t.commit();
         return lista;
     }
@@ -44,6 +46,7 @@ public class PessoaDao {
     public void update(Pessoa pessoa) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
+        
         session.update(pessoa);
 //      session.saveOrUpdate(pessoa);
         t.commit();

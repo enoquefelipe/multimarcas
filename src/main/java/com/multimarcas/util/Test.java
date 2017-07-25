@@ -1,13 +1,14 @@
 package com.multimarcas.util;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.AnnotationConfiguration;
+
 import com.multimarcas.dao.MarcaDao;
 import com.multimarcas.dao.VeiculoDao;
 import com.multimarcas.model.Marca;
 import com.multimarcas.model.Pessoa;
 import com.multimarcas.model.Veiculo;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
 
 /**
  * 

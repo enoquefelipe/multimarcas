@@ -1,10 +1,12 @@
 package com.multimarcas.dao;
 
-import com.multimarcas.model.Pessoa;
-import com.multimarcas.util.HibernateUtil;
 import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
+import com.multimarcas.model.Pessoa;
+import com.multimarcas.util.HibernateUtil;
 
 /**
  * 

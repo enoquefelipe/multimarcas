@@ -13,7 +13,9 @@ import javax.persistence.Id;
 @Entity(name = "tab_contato")
 public class Contato implements Serializable {
 
-    @Id
+	private static final long serialVersionUID = -1987468269940799682L;
+	
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String email, site, residencial, movel, comercial, fax, obs;

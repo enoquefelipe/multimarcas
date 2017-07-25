@@ -13,7 +13,9 @@ import javax.persistence.Id;
 @Entity(name = "tab_concessionaria")
 public class Concessionaria implements Serializable {
 
-    @Id
+	private static final long serialVersionUID = 824101681822325298L;
+	
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id_concessionaria;
     private String nome;

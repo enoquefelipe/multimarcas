@@ -15,7 +15,9 @@ import javax.persistence.ManyToOne;
 @Entity(name = "tab_veiculo")
 public class Veiculo implements Serializable {
 
-    @Id
+	private static final long serialVersionUID = 8056041125900101313L;
+	
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String modelo, ano, categoria, preco, motor, img_princial;

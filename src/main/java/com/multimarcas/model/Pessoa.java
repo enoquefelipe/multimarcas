@@ -15,6 +15,9 @@ import javax.persistence.OneToOne;
  */
 @Entity(name = "tab_pessoa")
 public class Pessoa implements Serializable {
+	
+	private static final long serialVersionUID = -5718069321791003217L;
+	
 //  @Temporal(TemporalType.DATE)
 //  private Date data_nasc;
     @Id
@@ -58,7 +61,7 @@ public class Pessoa implements Serializable {
         return endereco;
     }
 
-      @MapsId
+    @MapsId
     public Contato getContato() {
         return contato;
     }   

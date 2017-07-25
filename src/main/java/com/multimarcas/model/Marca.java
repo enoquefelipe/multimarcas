@@ -17,7 +17,9 @@ import javax.persistence.OneToMany;
 @Entity(name = "tab_marca")
 public class Marca implements Serializable {
 
-    @Id
+	private static final long serialVersionUID = 6628051418111596290L;
+	
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nome;

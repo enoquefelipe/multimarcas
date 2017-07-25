@@ -20,8 +20,8 @@ public class VeiculoBean {
     private Veiculo veiculo;
     private Marca marca;
     private Long id;
-    private DataModel listaVeiculos;
-    private List marcas;
+    private DataModel<?> listaVeiculos;
+    private List<Marca> marcas;
 
     public String preparaAddVeiculo() {
         veiculo = new Veiculo();
@@ -51,11 +51,11 @@ public class VeiculoBean {
         this.veiculo = veiculo;
     }
 
-    public DataModel getListaVeiculos() {
+    public DataModel<?> getListaVeiculos() {
         return listaVeiculos;
     }
 
-    public void setListaVeiculos(DataModel listaVeiculos) {
+    public void setListaVeiculos(DataModel<?> listaVeiculos) {
         this.listaVeiculos = listaVeiculos;
     }
 

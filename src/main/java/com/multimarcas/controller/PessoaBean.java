@@ -28,7 +28,7 @@ public class PessoaBean {
     private Pessoa pessoa;
     private Endereco endereco;
     private Contato contato;
-    private DataModel listaPessoas;
+    private DataModel<Pessoa> listaPessoas;
 //  private String data;
 //  private Date dt;
 
@@ -45,9 +45,9 @@ public class PessoaBean {
         return "listaPessoas";
     }
 
-    public DataModel listarPessoas() {
+    public DataModel<Pessoa> listarPessoas() {
         List<Pessoa> lista = new PessoaDao().list();
-        listaPessoas = new ListDataModel(lista);
+        listaPessoas = new ListDataModel<Pessoa>(lista);
         return listaPessoas;
     }
 
@@ -99,7 +99,7 @@ public class PessoaBean {
         return pessoa;
     }
 
-    public DataModel getListaPessoas() {
+    public DataModel<Pessoa> getListaPessoas() {
         return listaPessoas;
     }
 
@@ -115,7 +115,7 @@ public class PessoaBean {
         this.pessoa = pessoa;
     }
 
-    public void setListaPessoas(DataModel listaPessoas) {
+    public void setListaPessoas(DataModel<Pessoa> listaPessoas) {
         this.listaPessoas = listaPessoas;
     }
 
